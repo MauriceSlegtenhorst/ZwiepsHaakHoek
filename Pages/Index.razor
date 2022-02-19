@@ -1,9 +1,25 @@
 ﻿@page "/"
+@using ZwiepsHaakHoek.Models
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Zieps Haak Hoek</PageTitle>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+@if(Products is not null)
+{
+    <div class="container">
+        @foreach(Product product in Products)
+        {
+            <div class="card">
+                <img src="@product.Image[0].File.Url" class="card-img-top" width="200" alt="@product.Image[0].Description">
+                <div class="card-body">
+                    <h3 class="card-text">@product.Title</h3>
+                    <p class="card-text">@product.Description</p>
+                    <p class="card-text">@product.Price</p>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <span>Loading...</span>
+}
