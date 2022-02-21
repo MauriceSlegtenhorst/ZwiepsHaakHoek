@@ -7,22 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="contentful.csharp" Version="7.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.2" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Styles\FontAwesome\" />
     <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\font-awesome\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="compilerconfig.json" />
   </ItemGroup>
 
 </Project>

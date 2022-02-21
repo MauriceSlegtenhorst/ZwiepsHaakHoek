@@ -1,0 +1,103 @@
+﻿@import "../../Styles/_Colors.scss";
+@import "../../Styles/_Dimensions.scss";
+@import "../../Styles/_Animations.scss";
+
+.carousel-container {
+    position: relative;
+    margin: auto;
+    background-color: $GRAY_BACKGROUND;
+    max-width: 100%;
+
+    > img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    > [class*="move-"] {
+        position: absolute;
+        top: 50%;
+        margin-top: - calc(($PADDING * 2 + 80px) / 2);
+        padding: $PADDING;
+        cursor: pointer;
+        transition: 0.6s ease;
+        user-select: none;
+        color: $GRAY;
+
+        &:hover {
+            cursor: pointer;
+            background-color: transparentize($BLACK, 0.2);
+        }
+    }
+
+    > .move-next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    > .move-previous {
+        left: 0;
+        border-radius: 0 3px 3px 0;
+    }
+
+    > .circle-container {
+        $CONTAINER_WIDTH: 25%;
+        position: absolute;
+        bottom: 0;
+        width: $CONTAINER_WIDTH;
+        display: flex;
+        left: calc(50% - $CONTAINER_WIDTH / 2);
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: $PADDING 0 $PADDING 0;
+
+        > .fa-circle {
+            color: $GRAY;
+            font-size: .75em;
+            cursor: pointer;
+            transition: color 0.6s ease;
+            
+            &:hover{
+                color: $GRAY_SELECTED;
+            }
+
+            &.selected {
+                font-size: 1em;
+                color: $GRAY_SELECTED;
+
+                &:hover{
+                    color: darken($GRAY_SELECTED, 20%)
+                }
+            }
+        }
+    }
+}
+
+.fade {
+    -webkit-animation-name: $ANIMATION_FADE;
+    -webkit-animation-duration: $DURATION_LONG;
+    animation-name: $ANIMATION_FADE;
+    animation-duration: $DURATION_LONG;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
