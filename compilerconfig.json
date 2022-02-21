@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/zwieps-haak-hoek.css",
+    "inputFile": "Styles/ZwiepsHaakHoek.scss"
+  },
+  {
+    "outputFile": "Shared/MainLayout.razor.css",
+    "inputFile": "Shared/MainLayout.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Components/Carousel.razor.css",
+    "inputFile": "Shared/Components/Carousel.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Components/NavMenu.razor.css",
+    "inputFile": "Shared/Components/NavMenu.razor.scss"
+  }
+]

@@ -1,25 +1,19 @@
 ﻿@page "/"
-@using ZwiepsHaakHoek.Models
+@using ZwiepsHaakHoek.Models.Contentful
+@using System.Linq
 
 <PageTitle>Zieps Haak Hoek</PageTitle>
 
-@if(Products is not null)
+@if(CFIndex is not null)
 {
-    <div class="container">
-        @foreach(Product product in Products)
-        {
-            <div class="card">
-                <img src="@product.Image[0].File.Url" class="card-img-top" width="200" alt="@product.Image[0].Description">
-                <div class="card-body">
-                    <h3 class="card-text">@product.Title</h3>
-                    <p class="card-text">@product.Description</p>
-                    <p class="card-text">@product.Price</p>
-                </div>
-            </div>
-        }
-    </div>
+    <Carousel 
+        Images="() => CFIndex.Images.Select<Asset, CarouselImage>(x => new CarouselImage{ Url = x.File.Url, Alt = x.Description }).ToArray()"
+        MaxPixelHeight="500"
+    />
+
+    @((MarkupString)IntroHTML);
 }
 else
 {
-    <span>Loading...</span>
+    <span>Loading page content...</span>
 }
