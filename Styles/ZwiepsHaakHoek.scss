@@ -1,13 +1,37 @@
 ﻿@import "FontAwesome/fontawesome.scss";
 @import "FontAwesome/solid.scss";
+@import "_Colors.scss";
+@import "_Dimensions.scss";
+@import "Animations/_Animations.scss";
 
-body{
+body {
     position: relative;
     width: 100vw;
+    min-height: 100vh;
     margin: 0;
+    background-color: var(--color-black);
+    color: var(--color-primairy);
 
-    > #app{
-        height:100%;
-        width: 100%;
+    > #app {
+        width: inherit;
+        min-height: inherit;
+
+        > .initial-loading-screen {
+            width: inherit;
+            min-height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            > #logo{
+                width: 50vw;
+                height: 50vh;
+            }
+        }
     }
+}
+
+circle, path {
+    stroke: var(--color-primairy);
 }

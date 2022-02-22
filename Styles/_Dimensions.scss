@@ -1,1 +1,16 @@
-﻿$PADDING: 16px;
+﻿$dimensions:
+    (
+        "xx-s": 2px,
+        "x-s": 4px,
+        "s": 8px,
+        "md": 16px,
+        "lg": 32px,
+        "x-lg": 64px,
+        "xx-lg": 128px
+    );
+
+:root {
+    @each $key, $value in $dimensions {
+        --size-#{$key}: #{$value};
+    }
+}

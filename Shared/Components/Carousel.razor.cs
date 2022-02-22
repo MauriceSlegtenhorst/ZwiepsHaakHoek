@@ -12,8 +12,6 @@ namespace ZwiepsHaakHoek.Shared.Components
 
         private int _index;
 
-        private string _imageCSS;
-
         private CarouselImage[] _images;
         [Parameter, EditorRequired]
         public Func<CarouselImage[]> Images { get; set; }
