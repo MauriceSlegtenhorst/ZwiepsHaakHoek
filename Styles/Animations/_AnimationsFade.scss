@@ -1,0 +1,21 @@
+﻿@import "../_Utilities.scss";
+
+.fade {
+    $fade: fade;
+    @each $key, $value in $browsers-support-prefixes {
+         #{$value}animation-name : $fade;
+    }
+}
+
+@each $key, $value in $browsers-support-prefixes {
+    @#{$value}keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }   
+}
+

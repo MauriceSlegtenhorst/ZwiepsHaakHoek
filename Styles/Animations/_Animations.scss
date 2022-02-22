@@ -1,0 +1,18 @@
+﻿@import "_AnimationsFade.scss";
+
+$durations : (
+    "very-short" : 0.25s,
+    "short"      : 0.5s,
+    "standard"   : 1s,
+    "long"       : 1.25s,
+    "very-long"  : 1.5s
+);
+
+@each $key, $duration in $durations 
+{
+    .duration-#{$key} {
+        @each $key, $prefix in $browsers-support-prefixes {
+            #{$prefix}animation-duration: $duration;
+        }
+    }
+}
