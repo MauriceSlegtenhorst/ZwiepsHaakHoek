@@ -1,0 +1,20 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "target": "es2015",
+    "outDir": "wwwroot/javascript"
+  },
+  "include": [
+    "pages/**/*",
+    "shared/**/*",
+    "typescript/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Timers;
-using ZwiepsHaakHoek.Models.Carousel;
+using ZwiepsHaakHoek.Models;
 
 using Timer = System.Timers.Timer;
 
@@ -12,9 +12,9 @@ namespace ZwiepsHaakHoek.Shared.Components
 
         private int _index;
 
-        private CarouselImage[] _images;
+        private Image[] _images;
         [Parameter, EditorRequired]
-        public Func<CarouselImage[]> Images { get; set; }
+        public Func<Image[]> Images { get; set; }
 
         /// <summary>
         /// Interval in miliseconds. Changes to the next image every interval.

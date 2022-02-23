@@ -14,5 +14,13 @@
   {
     "outputFile": "Shared/Components/NavMenu.razor.css",
     "inputFile": "Shared/Components/NavMenu.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Components/NavBar.razor.css",
+    "inputFile": "Shared/Components/NavBar.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Components/LanguageSelector.razor.css",
+    "inputFile": "Shared/Components/LanguageSelector.razor.scss"
   }
 ]

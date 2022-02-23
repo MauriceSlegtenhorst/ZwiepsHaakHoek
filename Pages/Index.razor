@@ -7,7 +7,7 @@
 @if(CFIndex is not null)
 {
     <Carousel 
-        Images="() => CFIndex.Images.Select<Asset, CarouselImage>(x => new CarouselImage{ Url = x.File.Url, Alt = x.Description }).ToArray()"
+        Images="() => CFIndex.Images.Select<Asset, Image>(x => new Image{ Url = x.File.Url, Alt = x.Description }).ToArray()"
         MaxPixelHeight="500"
     />
 

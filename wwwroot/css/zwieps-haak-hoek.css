@@ -7241,7 +7241,13 @@ readers do not read off random characters that represent icons */
   animation-duration: 1.5s;
 }
 
+@font-face {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  src: url("../Roboto-Regular.ttf") format("truetype");
+}
 body {
+  font-family: "Roboto", sans-serif;
   position: relative;
   width: 100vw;
   min-height: 100vh;

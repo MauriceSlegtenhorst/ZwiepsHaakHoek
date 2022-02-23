@@ -4,7 +4,14 @@
 @import "_Dimensions.scss";
 @import "Animations/_Animations.scss";
 
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    src: url('../wwwroot/Roboto-Regular.ttf') format('truetype');
+}
+
 body {
+    font-family: 'Roboto', sans-serif;
     position: relative;
     width: 100vw;
     min-height: 100vh;
@@ -24,7 +31,7 @@ body {
             align-items: center;
             flex-direction: column;
 
-            > #logo{
+            > #logo {
                 width: 50vw;
                 height: 50vh;
             }
