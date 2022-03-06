@@ -4,13 +4,29 @@
 @import "_Dimensions.scss";
 @import "Animations/_Animations.scss";
 
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    src: url('../wwwroot/Roboto-Regular.ttf') format('truetype');
+}
+
 body {
+    font-family: 'Roboto', sans-serif;
     position: relative;
     width: 100vw;
     min-height: 100vh;
     margin: 0;
     background-color: var(--color-black);
-    color: var(--color-primairy);
+    color: var(--color-white);
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--color-primary);
+    }
+
+    circle, path {
+        stroke: var(--color-primary);
+        fill: var(--color-primary);
+    }
 
     > #app {
         width: inherit;
@@ -24,14 +40,10 @@ body {
             align-items: center;
             flex-direction: column;
 
-            > #logo{
+            > #logo {
                 width: 50vw;
                 height: 50vh;
             }
         }
     }
-}
-
-circle, path {
-    stroke: var(--color-primairy);
 }

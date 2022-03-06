@@ -1,0 +1,23 @@
+﻿.select-container {
+  position: relative;
+}
+.select-container > .select:hover {
+  cursor: pointer;
+}
+.select-container > .options-container {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  height: 0;
+}
+.select-container > .options-container > .option {
+  background-color: var(--color-gray);
+}
+.select-container > .options-container > .option:hover {
+  cursor: pointer;
+  background-color: var(--color-gray-light);
+}
+.select-container > .options-container.expanded {
+  height: initial;
+  display: block;
+}

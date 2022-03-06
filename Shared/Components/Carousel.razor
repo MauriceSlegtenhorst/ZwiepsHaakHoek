@@ -4,7 +4,7 @@
     <i class="fa-solid fa-angle-right fa-5x move-next" @onclick="MoveNext"/>
 
     <div class="circle-container">
-        @foreach (CarouselImage image in _images)
+        @foreach (Image image in _images)
         {
             <i class="fa-solid fa-circle@(image == _images[_index] ? " selected" : null)" @onclick="() => _index = Array.IndexOf(_images, image)"/>
         }

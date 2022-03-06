@@ -9,7 +9,7 @@ namespace ZwiepsHaakHoek.Extensions.ServiceCollection
         public static void AddContentfulServices(this IServiceCollection services, IConfiguration configuration)
         {
             // Ye ye, I know this is not secure... who cares
-            services.AddTransient<IContentfulClient, ContentfulClient>(
+            services.AddSingleton<IContentfulClient, ContentfulClient>(
                 sp => new ContentfulClient(
                     new HttpClient(),
                     new ContentfulOptions
@@ -22,7 +22,7 @@ namespace ZwiepsHaakHoek.Extensions.ServiceCollection
                 )
             );
 
-            services.AddTransient(sp => new HtmlRenderer());
+            services.AddSingleton(sp => new HtmlRenderer());
         }
     }
 }
