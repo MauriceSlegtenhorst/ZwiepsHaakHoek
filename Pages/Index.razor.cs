@@ -33,7 +33,7 @@ namespace ZwiepsHaakHoek.Pages
         {
             // Contenful: Including referenced content is only supported for the methods that return collections. Using GetEntry will not resolve your references. Meaning we have to configure QueryBuilder
             // with Limit(1)
-            var queryBuilder = QueryBuilder<CFIndex>.New.ContentTypeIs("home").LocaleIs(Localization.SelectedCulture.Code).Limit(1);
+            var queryBuilder = QueryBuilder<CFIndex>.New.ContentTypeIs("home").LocaleIs(Localization.SelectedCulture.Locale.Code).Limit(1);
             
             try
             {

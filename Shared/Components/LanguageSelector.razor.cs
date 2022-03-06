@@ -1,5 +1,6 @@
 ﻿using Contentful.Core;
 using Microsoft.AspNetCore.Components;
+using ZwiepsHaakHoek.Models;
 using ZwiepsHaakHoek.Services.Localization;
 
 namespace ZwiepsHaakHoek.Shared.Components
@@ -15,9 +16,15 @@ namespace ZwiepsHaakHoek.Shared.Components
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
+        protected override async Task OnInitializedAsync()
+        {
+            
+            await base.OnInitializedAsync();
+        }
+
         public async Task SetLanguage(string cultureName)
         {
-            bool isLanguageSet = await Localization.TrySetCulture(cultureName);
+            bool isLanguageSet = await Localization.TrySetCultureAsync(cultureName);
 
             if (!isLanguageSet)
             {
@@ -26,6 +33,11 @@ namespace ZwiepsHaakHoek.Shared.Components
             }
 
             NavigationManager.NavigateTo(NavigationManager.Uri, true);
+        }
+
+        private async Task OnLanguageClick(Culture culture)
+        {
+            await SetLanguage(culture.Locale.Code);
         }
     }
 }

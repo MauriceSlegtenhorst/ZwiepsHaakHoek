@@ -1,12 +1,13 @@
 ﻿using Contentful.Core.Models.Management;
+using ZwiepsHaakHoek.Models;
 
 namespace ZwiepsHaakHoek.Services.Localization
 {
     public interface ILocalization
     {
-        Task SetCulture();
-        Task<bool> TrySetCulture(string cultureName);
-        Locale SelectedCulture { get; }
-        Locale[] SupportedCultures { get; }
+        Task SetInitialCultureAsync();
+        Task<bool> TrySetCultureAsync(string cultureName);
+        Culture SelectedCulture { get; }
+        Culture[] SupportedCultures { get; }
     }
 }

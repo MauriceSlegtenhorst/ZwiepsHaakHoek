@@ -1,1 +1,6 @@
 ﻿
+<Select Options="Localization.SupportedCultures" SelectedOption="Localization.SelectedCulture" Width="3rem" OnOptionClickCallBack="(Culture culture) => OnLanguageClick(culture)">
+    <OptionTemplate>
+        <img class="language-icon" src="@context.LanguageIcon.File.Url" alt="@context.LanguageIcon.Description" />
+    </OptionTemplate>
+</Select>

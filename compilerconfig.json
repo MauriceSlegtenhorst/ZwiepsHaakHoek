@@ -22,5 +22,9 @@
   {
     "outputFile": "Shared/Components/LanguageSelector.razor.css",
     "inputFile": "Shared/Components/LanguageSelector.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Components/Select.razor.css",
+    "inputFile": "Shared/Components/Select.razor.scss"
   }
 ]

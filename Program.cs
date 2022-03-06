@@ -14,6 +14,6 @@ builder.Services.AddServices(builder.Configuration, builder.HostEnvironment.Base
 var host = builder.Build();
 
 var localization = host.Services.GetRequiredService<ILocalization>();
-await localization.SetCulture();
+await localization.SetInitialCultureAsync();
 
 await host.RunAsync();

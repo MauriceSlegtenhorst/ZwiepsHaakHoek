@@ -17,7 +17,16 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: var(--color-black);
-    color: var(--color-primairy);
+    color: var(--color-white);
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--color-primary);
+    }
+
+    circle, path {
+        stroke: var(--color-primary);
+        fill: var(--color-primary);
+    }
 
     > #app {
         width: inherit;
@@ -37,8 +46,4 @@ body {
             }
         }
     }
-}
-
-circle, path {
-    stroke: var(--color-primairy);
 }

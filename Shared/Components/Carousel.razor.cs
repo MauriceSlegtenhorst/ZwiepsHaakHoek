@@ -34,7 +34,7 @@ namespace ZwiepsHaakHoek.Shared.Components
             }
         }
 
-        protected override Task OnInitializedAsync()
+        protected override async Task OnInitializedAsync()
         {
             if (Interval.HasValue)
             {
@@ -46,7 +46,7 @@ namespace ZwiepsHaakHoek.Shared.Components
 
             _images = Images.Invoke();
 
-            return base.OnInitializedAsync();
+            await base.OnInitializedAsync();
         }
 
         private void MoveNext()
