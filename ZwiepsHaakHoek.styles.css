@@ -63,4 +63,40 @@
 .carousel-container > .circle-container > .fa-circle.selected:hover[b-wdhm4luc81] {
   color: var(--color-gray-dark-2x);
 }
+/* /Shared/Components/LanguageSelector.razor.rz.scp.css */
+.language-icon[b-r2x4fguj9u] {
+  height: 2rem;
+}
+/* /Shared/Components/NavBar.razor.rz.scp.css */
+.navbar-container[b-0hu58fpzek] {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+/* /Shared/Components/Select.razor.rz.scp.css */
+.select-container[b-mhkx04khao] {
+  position: relative;
+}
+.select-container > .select:hover[b-mhkx04khao] {
+  cursor: pointer;
+}
+.select-container > .options-container[b-mhkx04khao] {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  height: 0;
+}
+.select-container > .options-container > .option[b-mhkx04khao] {
+  background-color: var(--color-gray);
+}
+.select-container > .options-container > .option:hover[b-mhkx04khao] {
+  cursor: pointer;
+  background-color: var(--color-gray-light);
+}
+.select-container > .options-container.expanded[b-mhkx04khao] {
+  height: initial;
+  display: block;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */

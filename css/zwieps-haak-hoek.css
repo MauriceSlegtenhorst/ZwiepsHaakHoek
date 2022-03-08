@@ -7117,12 +7117,12 @@ readers do not read off random characters that represent icons */
 }
 
 :root {
-  --color-primairy: #ffb81c;
-  --color-primairy-transparent: rgba(255, 184, 28, 0.8);
-  --color-primairy-dark: #e89f00;
-  --color-primairy-dark-2x: #b57c00;
-  --color-primairy-light: #ffc84f;
-  --color-primairy-light-2x: #ffd882;
+  --color-primary: #ffb81c;
+  --color-primary-transparent: rgba(255, 184, 28, 0.8);
+  --color-primary-dark: #e89f00;
+  --color-primary-dark-2x: #b57c00;
+  --color-primary-light: #ffc84f;
+  --color-primary-light-2x: #ffd882;
   --color-gray: #b5b5b5;
   --color-gray-transparent: rgba(181, 181, 181, 0.8);
   --color-gray-dark: #9c9c9c;
@@ -7241,13 +7241,26 @@ readers do not read off random characters that represent icons */
   animation-duration: 1.5s;
 }
 
+@font-face {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  src: url("../Roboto-Regular.ttf") format("truetype");
+}
 body {
+  font-family: "Roboto", sans-serif;
   position: relative;
   width: 100vw;
   min-height: 100vh;
   margin: 0;
   background-color: var(--color-black);
-  color: var(--color-primairy);
+  color: var(--color-white);
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  color: var(--color-primary);
+}
+body circle, body path {
+  stroke: var(--color-primary);
+  fill: var(--color-primary);
 }
 body > #app {
   width: inherit;
@@ -7264,8 +7277,4 @@ body > #app > .initial-loading-screen {
 body > #app > .initial-loading-screen > #logo {
   width: 50vw;
   height: 50vh;
-}
-
-circle, path {
-  stroke: var(--color-primairy);
 }
