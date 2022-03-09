@@ -9,9 +9,9 @@
     "outDir": "wwwroot/javascript"
   },
   "include": [
-    "ZwiepsHaakHoek/pages/**/*",
-    "ZwiepsHaakHoek/shared/**/*",
-    "ZwiepsHaakHoek/typescript/**/*"
+    "../pages/**/*",
+    "../shared/**/*",
+    "../typescript/**/*"
   ],
   "exclude": [
     "node_modules",
