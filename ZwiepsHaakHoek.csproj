@@ -33,10 +33,4 @@
     <Content Remove="compilerconfig.json" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="TypeScript\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>
