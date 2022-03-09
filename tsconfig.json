@@ -9,13 +9,12 @@
     "outDir": "wwwroot/javascript"
   },
   "include": [
-    "./**/*", 
     "pages/**/*",
     "shared/**/*",
     "typescript/**/*"
   ],
   "exclude": [
-    "node_modules",
-    "wwwroot"
+    "node_modules"
   ]
 }
+//"wwwroot"
