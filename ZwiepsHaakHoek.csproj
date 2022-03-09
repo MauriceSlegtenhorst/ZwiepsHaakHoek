@@ -32,5 +32,11 @@
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <TypeScriptCompile Update="TypeScript\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </TypeScriptCompile>
+  </ItemGroup>
 
 </Project>

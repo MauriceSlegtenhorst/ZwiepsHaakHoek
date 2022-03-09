@@ -9,7 +9,6 @@
     "outDir": "wwwroot/javascript"
   },
   "include": [
-    "zwiepshaakhoek/**/*" ,
     "pages/**/*",
     "shared/**/*",
     "typescript/**/*"
