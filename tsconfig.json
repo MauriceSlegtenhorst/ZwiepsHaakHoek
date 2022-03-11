@@ -10,9 +10,9 @@
     "rootDir": "./"
   },
   "include": [
-    "pages/**/*",
-    "shared/**/*",
-    "typescript/**/*"
+    "~/pages/**/*",
+    "~/shared/**/*",
+    "~/typescript/**/*"
   ],
   "exclude": [
     "node_modules",
