@@ -24,6 +24,9 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\font-awesome\" />
     <Folder Include="wwwroot\javascript\" />
+    <Folder Include="Pages\"/>
+    <Folder Include="Shared\"/>
+    <Folder Include="TypeScript\"/>
   </ItemGroup>
 
   <ItemGroup>
