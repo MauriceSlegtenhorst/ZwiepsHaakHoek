@@ -6,12 +6,9 @@
     "removeComments": false,
     "sourceMap": false,
     "target": "es2015",
-    "outDir": "wwwroot/javascript",
-    "rootDir": "./home/runner/work/ZwiepsHaakHoek/ZwiepsHaakHoek/"
+    "outDir": "wwwroot/javascript"
   },
   "include": [
-    "pages/**/*",
-    "shared/**/*",
     "typescript/**/*"
   ],
   "exclude": [
