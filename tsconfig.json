@@ -9,7 +9,7 @@
     "outDir": "wwwroot/javascript",
     "rootDir": "./"
   },
-  "include": 
+  "include": [
     "./release/",
     "pages/**/*",
     "shared/**/*",
