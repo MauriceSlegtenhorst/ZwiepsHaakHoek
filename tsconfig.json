@@ -7,10 +7,9 @@
     "sourceMap": false,
     "target": "es2015",
     "outDir": "wwwroot/javascript",
-    "rootDir": "./"
+    "rootDir": "./release/"
   },
   "include": [
-    "./release/",
     "pages/**/*",
     "shared/**/*",
     "typescript/**/*"
