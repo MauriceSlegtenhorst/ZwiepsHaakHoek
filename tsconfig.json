@@ -9,11 +9,6 @@
     "outDir": "wwwroot/javascript",
     "rootDir": "./"
   },
-  "include": [
-    "pages/**/*",
-    "shared/**/*",
-    "typescript/**/*"
-  ],
   "exclude": [
     "node_modules",
     "wwwroot"
