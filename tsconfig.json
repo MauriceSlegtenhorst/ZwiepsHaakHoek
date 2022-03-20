@@ -7,7 +7,7 @@
     "sourceMap": false,
     "target": "es2015",
     "outDir": "wwwroot/javascript",
-    "rootDir": "./home/runner/work/ZwiepsHaakHoek/ZwiepsHaakHoek/"    
+    "rootDir": "./release/"    
   },
   "include": [
     "typescript/**/*"
