@@ -7,7 +7,7 @@
     "sourceMap": false,
     "target": "es2015",
     "outDir": "wwwroot/javascript",
-    "rootDir": "./home/runner/.dotnet"
+    "rootDir": "./home/runner/.dotnet/"
   },
   "include": [
     "pages/**/*",
