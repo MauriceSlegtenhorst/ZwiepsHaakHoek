@@ -35,13 +35,5 @@
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
   </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Update="TypeScript\browser.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </TypeScriptCompile>
-    <TypeScriptCompile Update="TypeScript\local-storage.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </TypeScriptCompile>
-  </ItemGroup>
 
 </Project>
