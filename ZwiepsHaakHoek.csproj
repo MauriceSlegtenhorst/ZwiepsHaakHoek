@@ -24,9 +24,9 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\font-awesome\" />
     <Folder Include="wwwroot\javascript\" />
-    <Folder Include="Pages\"/>
-    <Folder Include="Shared\"/>
-    <Folder Include="TypeScript\"/>
+    <Folder Include="Pages\" />
+    <Folder Include="Shared\" />
+    <Folder Include="TypeScript\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +34,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="TypeScript\browser.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="TypeScript\local-storage.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </TypeScriptCompile>
   </ItemGroup>
 
 </Project>
