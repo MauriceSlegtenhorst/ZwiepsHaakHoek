@@ -2,28 +2,19 @@
 
 namespace ZwiepsHaakHoek.Services.Browser
 {
-    public class Browser : JSObjectReferenceLifetimeGuard, IBrowser
+    public class Browser : JSObjectReferenceGuard, IBrowser
     {
-        private readonly IJSRuntime _jSRuntime;
+        private const string JS_BROWSER_PATH = "/javascript/browser.js";
 
         private IJSObjectReference _browserJSReference;
 
-        public Browser(IJSRuntime jSRuntime)
-        {
-            _jSRuntime = jSRuntime;
-        }
+        public Browser(IJSRuntime jSRuntime) : base(jSRuntime) { }
 
         public async Task<string> GetLanguageName()
         {
-            await EnsureJSObjectReferencesAreInitiated();
+            _browserJSReference = await EnsureJSObjectReference(_browserJSReference, JS_BROWSER_PATH);
 
             return await _browserJSReference.InvokeAsync<string>("getBrowserLanguage");
-        }
-
-        protected override async Task EnsureJSObjectReferencesAreInitiated()
-        {
-            if (_browserJSReference is null)
-                _browserJSReference = await _jSRuntime.InvokeAsync<IJSObjectReference>("import", "/javascript/browser.js");
         }
     }
 }
