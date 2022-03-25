@@ -9,10 +9,6 @@
     "outDir": "wwwroot/javascript",
     "rootDir": "./"
   },
-  "include": [
-    "TypeScript/**/*",
-    "TypeScript/**.ts"
-  ],
   "exclude": [
     "node_modules",
     "wwwroot"
