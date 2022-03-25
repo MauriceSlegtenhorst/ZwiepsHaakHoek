@@ -10,7 +10,8 @@
     "rootDir": "./"
   },
   "include": [
-    "TypeScript/**/*"
+    "TypeScript/**/*",
+    "TypeScript/*.ts"
   ],
   "exclude": [
     "node_modules",
