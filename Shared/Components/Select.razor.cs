@@ -25,6 +25,9 @@ namespace ZwiepsHaakHoek.Shared.Components
         [Parameter]
         public RenderFragment<TOption> SelectedOptionTemplate { get; set; }
 
+        [Parameter]
+        public string CssClass { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
             if(SelectedOption is null)

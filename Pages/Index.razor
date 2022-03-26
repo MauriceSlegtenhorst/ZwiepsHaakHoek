@@ -8,7 +8,7 @@
 {
     <Carousel 
         Images="() => CFIndex.Images.Select<Asset, Image>(x => new Image{ Url = x.File.Url, Alt = x.Description }).ToArray()"
-        MaxPixelHeight="500"
+        MaxPixelHeight="500" Interval="5000"
     />
 
     @((MarkupString)IntroHTML);

@@ -1,7 +1,96 @@
-﻿.navbar-container{
-    position: relative;
+﻿.navbar-container {
+    z-index: 1;
+    position: absolute;
     width: 100%;
+    min-height: var(--size-xx-lg);
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
     align-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: background-color 1s ease 0s;
+
+    > .logo {
+        padding: var(--size-lg);
+        font-size: x-large;
+    }
+
+    > .links {
+        display: flex;
+        flex-direction: row;
+        gap: var(--size-x-lg);
+        text-shadow: 0.02em 0 var(--color-primary-dark), 0 0.02em var(--color-primary-dark);
+    }
+
+    > .language-selector-container {
+        padding: var(--size-lg);
+        width: var(--size-lg);
+        height: var(--size-lg);
+    }
+
+    > .hamburger {
+        display: none;
+        width: var(--size-lg);
+        height: var(--size-lg);
+        padding: var(--size-lg);
+        font-size: xx-large;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar-container {
+        justify-content: flex-end;
+
+        > .logo {
+            display: none;
+        }
+
+        > .links {
+            display: none;
+            flex-direction: column;
+        }
+
+        > .language-selector-container {
+            display: none;
+        }
+
+        > .hamburger {
+            display: block;
+        }
+
+        &.expanded {
+            justify-content: space-between;
+
+            > .logo {
+                display: none;
+            }
+
+            > .links {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: var(--color-black-light-2x);
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                gap: var(--size-md);
+            }
+
+            > .language-selector-container {
+                display: block;
+            }
+
+            > .hamburger {
+                z-index: 1;
+            }
+        }
+    }
 }
