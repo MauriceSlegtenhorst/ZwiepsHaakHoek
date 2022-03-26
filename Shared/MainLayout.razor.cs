@@ -33,7 +33,7 @@ namespace ZwiepsHaakHoek.Shared
             new() 
             {
 #if DEBUG
-                Url = "/credis", 
+                Url = "/credits", 
 #else
                 Url = "/ZwiepsHaakHoek/credits",
 #endif
