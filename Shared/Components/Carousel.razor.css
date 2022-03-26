@@ -1,7 +1,7 @@
 ﻿.carousel-container {
   position: relative;
   margin: auto;
-  background-color: var(--color-gray-light);
+  background-color: var(--color-black-light-2x);
   max-width: 100%;
 }
 .carousel-container > img {
@@ -16,7 +16,7 @@
 .carousel-container > [class*=move-] {
   position: absolute;
   top: 50%;
-  margin-top: -56px;
+  margin-top: calc((var(--size-md) * 2 + 80px) / 2);
   padding: var(--size-md);
   cursor: pointer;
   transition: 0.6s ease;

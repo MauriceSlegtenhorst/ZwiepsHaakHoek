@@ -12,7 +12,6 @@ namespace ZwiepsHaakHoek.Shared.Components
 
         private int _index;
 
-        private Image[] _images;
         [Parameter, EditorRequired]
         public Func<Image[]> Images { get; set; }
 
@@ -27,11 +26,13 @@ namespace ZwiepsHaakHoek.Shared.Components
 
         public void Dispose()
         {
-            if (_timer != null)
+            if (_timer is not null)
             {
                 _timer.Elapsed -= Tick;
                 _timer.Dispose();
             }
+
+            GC.SuppressFinalize(this);
         }
 
         protected override async Task OnInitializedAsync()
@@ -44,14 +45,12 @@ namespace ZwiepsHaakHoek.Shared.Components
                 _timer.Start();
             }
 
-            _images = Images.Invoke();
-
             await base.OnInitializedAsync();
         }
 
         private void MoveNext()
         {
-            _index = _index == _images.Length - 1
+            _index = _index == Images.Invoke().Length - 1
                     ? 0
                     : _index + 1;
         }
@@ -59,7 +58,7 @@ namespace ZwiepsHaakHoek.Shared.Components
         private void MovePrevious()
         {
             _index = _index == 0
-                    ? _images.Length - 1
+                    ? Images.Invoke().Length - 1
                     : _index - 1;
         }
 

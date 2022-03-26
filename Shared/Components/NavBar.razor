@@ -1,5 +1,14 @@
-﻿<nav class="navbar-container">
-    <NavLink href="/"></NavLink>
-
-    <LanguageSelector/>
+﻿<nav class="navbar-container@(navContainerCSS)">
+    <a class="logo" href="/">Zwieps Haak Hoek</a>
+    <div class="links">
+        @foreach (NavLink navLink in NavLinks.Invoke())
+        {
+            <a class="@(navLink.CssClass)" href="@navLink.Url">@navLink.DisplayText</a>
+        }
+    </div>
+    
+    <div class="language-selector-container">
+        <LanguageSelector />
+    </div>
+    <i class="fa-solid fa-hamburger hamburger" @onclick="OnHamburgerClick"/>
 </nav>

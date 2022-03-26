@@ -11,16 +11,27 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
     position: relative;
     width: 100vw;
     min-height: 100vh;
     margin: 0;
     background-color: var(--color-black);
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    font-weight: 500;
     color: var(--color-white);
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--color-primary);
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--color-primary-light);
+
+        &:hover {
+            color: var(--color-primary-light-2x);
+        }
     }
 
     circle, path {
