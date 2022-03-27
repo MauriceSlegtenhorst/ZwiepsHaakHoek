@@ -1,1 +1,1 @@
-﻿.language-icon{height:2rem;}
+﻿.language-icon{height:var(--size-lg);padding:var(--size-md);}

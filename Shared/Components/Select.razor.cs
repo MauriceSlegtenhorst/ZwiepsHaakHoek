@@ -5,9 +5,6 @@ namespace ZwiepsHaakHoek.Shared.Components
     public partial class Select<TOption>
     {
         [Parameter]
-        public string Width { get; set; } = "100%";
-
-        [Parameter]
         public bool IsExpanded { get; set; }
 
         [Parameter]

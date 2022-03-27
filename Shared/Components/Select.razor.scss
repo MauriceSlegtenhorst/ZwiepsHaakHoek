@@ -4,6 +4,7 @@
     > .select {
 
         &:hover {
+            background-color: var(--color-black-light);
             cursor: pointer;
         }
     }
@@ -15,15 +16,19 @@
         height: 0;
 
         > .option {
-            background-color: var(--color-gray);
+            background-color: var(--color-black-light);
 
             &:hover {
                 cursor: pointer;
-                background-color: var(--color-gray-light);
+                background-color: var(--color-black-light-2x);
             }
         }
+    }
 
-        &.expanded {
+    &.expanded {
+        background-color: var(--color-black-light);
+
+        > .options-container {
             height: initial;
             display: block;
         }

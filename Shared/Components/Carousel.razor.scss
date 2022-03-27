@@ -16,8 +16,8 @@
 
     > [class*="move-"] {
         position: absolute;
-        top: 50%;
-        margin-top: calc((var(--size-md) * 2 + 80px) / 2);
+        top: calc(50% - ((var(--size-md) + var(--size-x-lg)) / 2));
+        font-size: var(--size-x-lg);
         padding: var(--size-md);
         cursor: pointer;
         transition: 0.6s ease;

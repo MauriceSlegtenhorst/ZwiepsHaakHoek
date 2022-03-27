@@ -1,3 +1,4 @@
 ﻿.language-icon {
-  height: 2rem;
+  height: var(--size-lg);
+  padding: var(--size-md);
 }
