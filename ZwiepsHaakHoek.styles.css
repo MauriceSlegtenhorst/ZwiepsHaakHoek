@@ -16,8 +16,8 @@
 }
 .carousel-container > [class*=move-][b-wdhm4luc81] {
   position: absolute;
-  top: 50%;
-  margin-top: calc((var(--size-md) * 2 + 80px) / 2);
+  top: calc(50% - (var(--size-md) + var(--size-x-lg)) / 2);
+  font-size: var(--size-x-lg);
   padding: var(--size-md);
   cursor: pointer;
   transition: 0.6s ease;
@@ -65,7 +65,8 @@
 }
 /* /Shared/Components/LanguageSelector.razor.rz.scp.css */
 .language-icon[b-r2x4fguj9u] {
-  height: 2rem;
+  height: var(--size-lg);
+  padding: var(--size-md);
 }
 /* /Shared/Components/NavBar.razor.rz.scp.css */
 .navbar-container[b-0hu58fpzek] {
@@ -91,10 +92,11 @@
   gap: var(--size-x-lg);
   text-shadow: 0.02em 0 var(--color-primary-dark), 0 0.02em var(--color-primary-dark);
 }
+.navbar-container > .links > a:first-child[b-0hu58fpzek] {
+  display: none;
+}
 .navbar-container > .language-selector-container[b-0hu58fpzek] {
-  padding: var(--size-lg);
-  width: var(--size-lg);
-  height: var(--size-lg);
+  padding: var(--size-md);
 }
 .navbar-container > .hamburger[b-0hu58fpzek] {
   display: none;
@@ -141,7 +143,10 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    gap: var(--size-md);
+    gap: var(--size-lg);
+  }
+  .navbar-container.expanded > .links > a:first-child[b-0hu58fpzek] {
+    display: inline-block;
   }
   .navbar-container.expanded > .language-selector-container[b-0hu58fpzek] {
     display: block;
@@ -155,6 +160,7 @@
   position: relative;
 }
 .select-container > .select:hover[b-mhkx04khao] {
+  background-color: var(--color-black-light);
   cursor: pointer;
 }
 .select-container > .options-container[b-mhkx04khao] {
@@ -164,13 +170,16 @@
   height: 0;
 }
 .select-container > .options-container > .option[b-mhkx04khao] {
-  background-color: var(--color-gray);
+  background-color: var(--color-black-light);
 }
 .select-container > .options-container > .option:hover[b-mhkx04khao] {
   cursor: pointer;
-  background-color: var(--color-gray-light);
+  background-color: var(--color-black-light-2x);
 }
-.select-container > .options-container.expanded[b-mhkx04khao] {
+.select-container.expanded[b-mhkx04khao] {
+  background-color: var(--color-black-light);
+}
+.select-container.expanded > .options-container[b-mhkx04khao] {
   height: initial;
   display: block;
 }
