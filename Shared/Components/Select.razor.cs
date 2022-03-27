@@ -1,11 +1,25 @@
 ﻿using Microsoft.AspNetCore.Components;
+using ZwiepsHaakHoek.Utilities;
 
 namespace ZwiepsHaakHoek.Shared.Components
 {
     public partial class Select<TOption>
     {
+        private bool _isExpanded;
         [Parameter]
-        public bool IsExpanded { get; set; }
+        public bool IsExpanded 
+        {
+            get => _isExpanded; 
+            set 
+            {
+                _isExpanded = value;
+
+                if (_isExpanded)
+                    CssClass.Add("expanded");
+                else
+                    CssClass.Remove("expanded");
+            }
+        }
 
         [Parameter]
         public TOption SelectedOption { get; set; }
@@ -23,10 +37,18 @@ namespace ZwiepsHaakHoek.Shared.Components
         public RenderFragment<TOption> SelectedOptionTemplate { get; set; }
 
         [Parameter]
-        public string CssClass { get; set; }
+        public CssClass CssClass { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
+            if(CssClass is null)
+                CssClass = new CssClass("select-container");
+            else
+            {
+                if (!CssClass.Contains("select-container"))
+                    CssClass.Add("select-container");
+            }
+
             if(SelectedOption is null)
                 SelectedOption = Options[0];
 
@@ -36,10 +58,7 @@ namespace ZwiepsHaakHoek.Shared.Components
             await base.OnInitializedAsync();
         }
 
-        private void OnSelectClick()
-        {
-            IsExpanded = !IsExpanded;
-        }
+        private void OnSelectClick() => IsExpanded = !_isExpanded;
 
         private async Task OnOptionClick(TOption option)
         {

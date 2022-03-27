@@ -1,4 +1,15 @@
-﻿.navbar-container {
+﻿:root {
+  --size-xx-s: 2px;
+  --size-x-s: 4px;
+  --size-s: 8px;
+  --size-md: 16px;
+  --size-lg: 32px;
+  --size-x-lg: 64px;
+  --size-xx-lg: 128px;
+  --size-phone: 700px;
+}
+
+.navbar-container {
   z-index: 1;
   position: absolute;
   width: 100%;
@@ -33,6 +44,7 @@
   height: var(--size-lg);
   padding: var(--size-lg);
   font-size: xx-large;
+  color: var(--color-gray);
 }
 .navbar-container > .hamburger:hover {
   cursor: pointer;
@@ -57,9 +69,6 @@
   }
   .navbar-container.expanded {
     justify-content: space-between;
-  }
-  .navbar-container.expanded > .logo {
-    display: none;
   }
   .navbar-container.expanded > .links {
     position: absolute;

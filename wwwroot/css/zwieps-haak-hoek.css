@@ -7151,6 +7151,7 @@ readers do not read off random characters that represent icons */
   --size-lg: 32px;
   --size-x-lg: 64px;
   --size-xx-lg: 128px;
+  --size-phone: 700px;
 }
 
 .fade {
