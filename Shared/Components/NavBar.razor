@@ -1,5 +1,6 @@
 ﻿<nav class="@(_cssClass)">
-    <a class="logo" href="/">Zwieps Haak Hoek</a>
+    <a class="logo" href="@UrlService.CreateUrl("/")">Zwieps Haak Hoek</a>
+    
     <div class="links">
         @foreach (NavLink navLink in NavLinks.Invoke())
         {
@@ -10,5 +11,6 @@
     <div class="language-selector-container">
         <LanguageSelector />
     </div>
+
     <i class="fa-solid fa-hamburger hamburger" @onclick="OnHamburgerClick"/>
 </nav>
