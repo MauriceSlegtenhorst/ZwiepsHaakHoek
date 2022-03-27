@@ -1,4 +1,5 @@
 ﻿using Microsoft.JSInterop;
+using ZwiepsHaakHoek.Services.UrlService;
 
 namespace ZwiepsHaakHoek.Services.Browser
 {
@@ -8,11 +9,11 @@ namespace ZwiepsHaakHoek.Services.Browser
 
         private IJSObjectReference _browserJSReference;
 
-        public Browser(IJSRuntime jSRuntime) : base(jSRuntime) { }
+        public Browser(IJSRuntime jSRuntime, IUrlService urlService) : base(jSRuntime, urlService) { }
 
         public async Task<string> GetLanguageName()
         {
-            _browserJSReference = await EnsureJSObjectReference(_browserJSReference, JS_BROWSER_PATH);
+            _browserJSReference = await EnsureJSObjectInitialized(_browserJSReference, JS_BROWSER_PATH);
 
             return await _browserJSReference.InvokeAsync<string>("getBrowserLanguage");
         }

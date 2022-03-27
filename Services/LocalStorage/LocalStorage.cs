@@ -1,4 +1,5 @@
 ﻿using Microsoft.JSInterop;
+using ZwiepsHaakHoek.Services.UrlService;
 
 namespace ZwiepsHaakHoek.Services.LocalStorage
 {
@@ -10,7 +11,7 @@ namespace ZwiepsHaakHoek.Services.LocalStorage
 
         private IJSObjectReference _localStorageJSReference;
 
-        public LocalStorage(IJSRuntime jSRuntime) : base(jSRuntime) { }
+        public LocalStorage(IJSRuntime jSRuntime, IUrlService urlService) : base(jSRuntime, urlService) { }
 
         public async Task<(bool, string)> TryGetAsync(string key)
         {
@@ -23,14 +24,14 @@ namespace ZwiepsHaakHoek.Services.LocalStorage
 
         public async Task SetAsync(string key, string value)
         {
-            _localStorageJSReference = await EnsureJSObjectReference(_localStorageJSReference, JS_LOCAL_STORAGE_PATH);
+            _localStorageJSReference = await EnsureJSObjectInitialized(_localStorageJSReference, JS_LOCAL_STORAGE_PATH);
 
             await _localStorageJSReference.InvokeVoidAsync(SET_FUNCTION, key, value);
         }
 
         private async Task<string> GetAsync(string key)
         {
-            _localStorageJSReference = await EnsureJSObjectReference(_localStorageJSReference, JS_LOCAL_STORAGE_PATH);
+            _localStorageJSReference = await EnsureJSObjectInitialized(_localStorageJSReference, JS_LOCAL_STORAGE_PATH);
 
             return await _localStorageJSReference.InvokeAsync<string>(GET_FUNCTION, key);
         }

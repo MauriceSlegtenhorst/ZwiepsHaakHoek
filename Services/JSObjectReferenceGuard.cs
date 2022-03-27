@@ -1,4 +1,5 @@
 ﻿using Microsoft.JSInterop;
+using ZwiepsHaakHoek.Services.UrlService;
 
 namespace ZwiepsHaakHoek.Services
 {
@@ -6,18 +7,19 @@ namespace ZwiepsHaakHoek.Services
     {
         private const string IMPORT_FUNCTION = "import";
 
+        private readonly IUrlService _urlService;
+
         protected readonly IJSRuntime JSRuntime;
 
-        public JSObjectReferenceGuard(IJSRuntime jSRuntime)
+        public JSObjectReferenceGuard(IJSRuntime jSRuntime, IUrlService urlService)
         {
             JSRuntime = jSRuntime;
+            _urlService = urlService;
         }
 
-        protected async Task<IJSObjectReference> EnsureJSObjectReference(IJSObjectReference jSObjectReference, string path)
+        protected async Task<IJSObjectReference> EnsureJSObjectInitialized(IJSObjectReference jSObjectReference, string path)
         {
-#if !DEBUG
-            path = string.Join(null, "/ZwiepsHaakHoek", path);
-#endif
+            path = _urlService.CreateUrl(path);
 
             if (jSObjectReference is null)
                 jSObjectReference = await JSRuntime.InvokeAsync<IJSObjectReference>(IMPORT_FUNCTION, path);
