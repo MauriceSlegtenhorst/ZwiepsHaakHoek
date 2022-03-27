@@ -31,7 +31,7 @@ namespace ZwiepsHaakHoek.Utilities
 
         public void Insert(int index, string item)
         {
-            if (IsReadOnly)
+            if (IsReadOnly || index >= Classes.Length || index < 0)
                 return;
 
             int newLength = Classes.Length + 1;
@@ -56,7 +56,7 @@ namespace ZwiepsHaakHoek.Utilities
 
         public void RemoveAt(int index)
         {
-            if (IsReadOnly)
+            if (IsReadOnly || index >= Classes.Length || index < 0)
                 return;
 
             int newLength = Classes.Length - 1;
