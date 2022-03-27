@@ -1,3 +1,7 @@
+/* /Pages/Index.razor.rz.scp.css */
+.intro[b-2sbfutiag3] {
+  padding: 0 var(--size-md) 0 var(--size-md);
+}
 /* /Shared/Components/Carousel.razor.rz.scp.css */
 :root[b-wdhm4luc81] {
   --size-xx-s: 2px;
@@ -135,7 +139,7 @@
   height: var(--size-lg);
   padding: var(--size-lg);
   font-size: xx-large;
-  color: var(--color-gray);
+  color: var(--color-primary);
 }
 .navbar-container > .hamburger:hover[b-0hu58fpzek] {
   cursor: pointer;
@@ -185,6 +189,17 @@
   }
 }
 /* /Shared/Components/Select.razor.rz.scp.css */
+:root[b-mhkx04khao] {
+  --size-xx-s: 2px;
+  --size-x-s: 4px;
+  --size-s: 8px;
+  --size-md: 16px;
+  --size-lg: 32px;
+  --size-x-lg: 64px;
+  --size-xx-lg: 128px;
+  --size-phone: 700px;
+}
+
 .select-container[b-mhkx04khao] {
   position: relative;
 }
@@ -211,5 +226,14 @@
 .select-container.expanded > .options-container[b-mhkx04khao] {
   height: initial;
   display: block;
+}
+
+@media (max-width: 700px) {
+  .select-container > .select:hover[b-mhkx04khao] {
+    background-color: unset;
+  }
+  .select-container > .options-container > .option:hover[b-mhkx04khao] {
+    background-color: unset;
+  }
 }
 /* /Shared/MainLayout.razor.rz.scp.css */

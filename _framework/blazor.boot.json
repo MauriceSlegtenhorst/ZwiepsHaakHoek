@@ -65,7 +65,7 @@
       "System.Text.Encodings.Web.dll": "sha256-I9H\/oBAXuKgbDZypJILfJASFnsQSvLdkNo\/vOKDBXBY=",
       "System.Text.Json.dll": "sha256-u4fhDtsNmabHghHk01p8vVBGha1cIuY\/dYLNvw7b\/Dc=",
       "System.Text.RegularExpressions.dll": "sha256-OloeScB3tAteuoEG8gxcyJfcd9t0Glsff\/Zoo7QtdDM=",
-      "ZwiepsHaakHoek.dll": "sha256-CL+BZdmO\/yMQRhjbQzqPSl\/B0o5VHJ5OVtFmv\/yZc3A="
+      "ZwiepsHaakHoek.dll": "sha256-NhftjosSYnEBLQF96bxauipSr2m76mgU+jU65x8WxaE="
     },
     "extensions": null,
     "lazyAssembly": null,
@@ -82,7 +82,7 @@
     },
     "satelliteResources": {
       "de": {
-        "de\/ZwiepsHaakHoek.resources.dll": "sha256-OzPz9q+gtpFucqHLqbxMU2vtsx6jrjeyAd24qhCjrjQ="
+        "de\/ZwiepsHaakHoek.resources.dll": "sha256-lu5VFX\/x5bpKUAOvyDbzQJZfQwhqeISwK3HRcV4+8zo="
       }
     }
   }
