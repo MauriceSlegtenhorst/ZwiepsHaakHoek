@@ -41,6 +41,7 @@ namespace ZwiepsHaakHoek.Shared.Components
         private void OnLocationChanged(object sender, LocationChangedEventArgs args)
         {
             _expanded = false;
+            _cssClass.Remove("expanded");
             StateHasChanged();
         } 
 
