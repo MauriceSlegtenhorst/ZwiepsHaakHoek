@@ -1,6 +1,7 @@
 ﻿using ZwiepsHaakHoek.Services.Browser;
 using ZwiepsHaakHoek.Services.Localization;
 using ZwiepsHaakHoek.Services.LocalStorage;
+using ZwiepsHaakHoek.Services.UrlService;
 
 namespace ZwiepsHaakHoek.Extensions.ServiceCollection
 {
@@ -14,6 +15,7 @@ namespace ZwiepsHaakHoek.Extensions.ServiceCollection
             services.AddSingleton<IBrowser, Browser>();
             services.AddSingleton<ILocalStorage, LocalStorage>();
             services.AddSingleton<ILocalization, Localization>();
+            services.AddSingleton<IUrlService, UrlService>();
         }
     }
 }

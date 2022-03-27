@@ -3,7 +3,7 @@
     <div class="links">
         @foreach (NavLink navLink in NavLinks.Invoke())
         {
-            <a class="@(navLink.CssClass)" @onclick="() => NavigationManager.NavigateTo(navLink.Url)">@navLink.DisplayText</a>
+            <a class="@(navLink.CssClass)" href="@navLink.Url">@navLink.DisplayText</a>
         }
     </div>
     
