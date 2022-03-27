@@ -1,4 +1,6 @@
-﻿.select-container {
+﻿@import "../../Styles/_Dimensions.scss";
+
+.select-container {
     position: relative;
 
     > .select {
@@ -31,6 +33,28 @@
         > .options-container {
             height: initial;
             display: block;
+        }
+    }
+}
+
+@media (max-width: map-get($dimensions, 'phone')) {
+    .select-container {
+
+        > .select {
+
+            &:hover {
+                background-color: unset;
+            }
+        }
+
+        > .options-container {
+
+            > .option {
+
+                &:hover {
+                    background-color: unset;
+                }
+            }
         }
     }
 }

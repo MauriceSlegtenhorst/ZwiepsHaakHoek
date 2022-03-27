@@ -97,6 +97,15 @@ namespace ZwiepsHaakHoek.Shared.ResourceFiles {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bezig met laden van de pagina....
+        /// </summary>
+        public static string LoadingPageContent {
+            get {
+                return ResourceManager.GetString("LoadingPageContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Producten.
         /// </summary>
         public static string Products {

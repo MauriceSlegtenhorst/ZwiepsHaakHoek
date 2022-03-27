@@ -11,9 +11,11 @@
         MaxPixelHeight="500" Interval="5000"
     />
 
-    @((MarkupString)IntroHTML);
+    <div class="intro">
+        @((MarkupString)IntroHTML)
+    </div>
 }
 else
 {
-    <span>Loading page content...</span>
+    <span>@Localizer["LoadingPageContent"]</span>
 }

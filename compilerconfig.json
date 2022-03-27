@@ -26,5 +26,9 @@
   {
     "outputFile": "Shared/Components/Select.razor.css",
     "inputFile": "Shared/Components/Select.razor.scss"
+  },
+  {
+    "outputFile": "Pages/Index.razor.css",
+    "inputFile": "Pages/Index.razor.scss"
   }
 ]
