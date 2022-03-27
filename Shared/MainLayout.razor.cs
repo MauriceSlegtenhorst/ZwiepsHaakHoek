@@ -16,6 +16,7 @@ namespace ZwiepsHaakHoek.Shared
 
         private NavBar.NavLink[] NavLinks() => new NavBar.NavLink[] 
         {
+            new() { Url = UrlService.CreateUrl("/"), DisplayText = Localizer["Home"] },
             new() { Url = UrlService.CreateUrl("/products"), DisplayText = Localizer["Products"] },
             new() { Url = UrlService.CreateUrl("/contact"), DisplayText = Localizer["Contact"] },
             new() { Url = UrlService.CreateUrl("/credits"), DisplayText = Localizer["Credits"] },

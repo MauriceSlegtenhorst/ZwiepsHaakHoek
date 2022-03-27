@@ -21,12 +21,14 @@
         flex-direction: row;
         gap: var(--size-x-lg);
         text-shadow: 0.02em 0 var(--color-primary-dark), 0 0.02em var(--color-primary-dark);
+
+        > a:first-child {
+            display: none;
+        }
     }
 
     > .language-selector-container {
-        padding: var(--size-lg);
-        width: var(--size-lg);
-        height: var(--size-lg);
+        padding: var(--size-md);
     }
 
     > .hamburger {
@@ -81,7 +83,11 @@
                 align-content: center;
                 justify-content: center;
                 align-items: center;
-                gap: var(--size-md);
+                gap: var(--size-lg);
+
+                > a:first-child {
+                    display: inline-block;
+                }
             }
 
             > .language-selector-container {

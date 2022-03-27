@@ -126,6 +126,9 @@
   <data name="Credits" xml:space="preserve">
     <value>Credits</value>
   </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
   <data name="Products" xml:space="preserve">
     <value>Produkte</value>
   </data>

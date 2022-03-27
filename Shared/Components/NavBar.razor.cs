@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Routing;
 
 namespace ZwiepsHaakHoek.Shared.Components
 {
-    public partial class NavBar
+    public partial class NavBar : IDisposable
     {
-        private bool _expanded;
-        private string _navContainerCSS => _expanded ? " expanded" : null;
+        private bool expanded;
+        private string navContainerCSS => expanded ? " expanded" : null;
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
@@ -13,7 +14,25 @@ namespace ZwiepsHaakHoek.Shared.Components
         [Parameter, EditorRequired]
         public Func<NavLink[]> NavLinks { get; set; }
 
-        private void OnHamburgerClick() => _expanded = !_expanded;
+        protected override Task OnInitializedAsync()
+        {
+            NavigationManager.LocationChanged += OnLocationChanged;
+            return base.OnInitializedAsync();
+        }
+
+        public void Dispose()
+        {
+            NavigationManager.LocationChanged -= OnLocationChanged;
+            GC.SuppressFinalize(this);
+        }
+
+        private void OnHamburgerClick() => expanded = !expanded;
+
+        private void OnLocationChanged(object sender, LocationChangedEventArgs args)
+        {
+            expanded = false;
+            StateHasChanged();
+        } 
 
         public class NavLink
         {

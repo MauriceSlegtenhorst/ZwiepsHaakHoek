@@ -88,6 +88,15 @@ namespace ZwiepsHaakHoek.Shared.ResourceFiles {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Producten.
         /// </summary>
         public static string Products {
