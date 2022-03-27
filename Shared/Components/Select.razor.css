@@ -1,4 +1,15 @@
-﻿.select-container {
+﻿:root {
+  --size-xx-s: 2px;
+  --size-x-s: 4px;
+  --size-s: 8px;
+  --size-md: 16px;
+  --size-lg: 32px;
+  --size-x-lg: 64px;
+  --size-xx-lg: 128px;
+  --size-phone: 700px;
+}
+
+.select-container {
   position: relative;
 }
 .select-container > .select:hover {
@@ -24,4 +35,13 @@
 .select-container.expanded > .options-container {
   height: initial;
   display: block;
+}
+
+@media (max-width: 700px) {
+  .select-container > .select:hover {
+    background-color: unset;
+  }
+  .select-container > .options-container > .option:hover {
+    background-color: unset;
+  }
 }

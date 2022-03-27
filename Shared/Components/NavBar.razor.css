@@ -44,7 +44,7 @@
   height: var(--size-lg);
   padding: var(--size-lg);
   font-size: xx-large;
-  color: var(--color-gray);
+  color: var(--color-primary);
 }
 .navbar-container > .hamburger:hover {
   cursor: pointer;

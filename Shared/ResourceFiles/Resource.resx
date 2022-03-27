@@ -129,6 +129,9 @@
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="LoadingPageContent" xml:space="preserve">
+    <value>Bezig met laden van de pagina...</value>
+  </data>
   <data name="Products" xml:space="preserve">
     <value>Producten</value>
   </data>
