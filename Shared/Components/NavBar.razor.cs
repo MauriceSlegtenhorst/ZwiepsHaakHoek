@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Routing;
+using ZwiepsHaakHoek.Services.UrlService;
 using ZwiepsHaakHoek.Utilities;
 
 namespace ZwiepsHaakHoek.Shared.Components
@@ -12,6 +13,9 @@ namespace ZwiepsHaakHoek.Shared.Components
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
+
+        [Inject]
+        public IUrlService UrlService { get; set; }
 
         [Parameter, EditorRequired]
         public Func<NavLink[]> NavLinks { get; set; }
