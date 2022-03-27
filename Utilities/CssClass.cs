@@ -113,7 +113,7 @@ namespace ZwiepsHaakHoek.Utilities
 
         public bool Remove(string item)
         {
-            if (IsReadOnly)
+            if (IsReadOnly || !Classes.Contains(item))
                 return false;
 
             int newLength = Classes.Length - 1;
