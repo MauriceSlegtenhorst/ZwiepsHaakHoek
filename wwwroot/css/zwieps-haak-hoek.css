@@ -7266,6 +7266,7 @@ body a {
 }
 body a:hover {
   color: var(--color-primary-light-2x);
+  cursor: pointer;
 }
 body circle, body path {
   stroke: var(--color-primary);

@@ -12,42 +12,46 @@ namespace ZwiepsHaakHoek.Shared
 
         private NavBar.NavLink[] NavLinks() => new NavBar.NavLink[] 
         {
-            new() 
-            {
-#if DEBUG
-                Url = "/products",
-#else
-                Url = "/ZwiepsHaakHoek/products",
-#endif
-                DisplayText = Localizer["Products"] 
-            },
-            new() 
-            { 
-#if DEBUG
-                Url = "/contact", 
-#else
-                Url = "/ZwiepsHaakHoek/contact",
-#endif
-                DisplayText = Localizer["Contact"] 
-            },
-            new() 
-            {
-#if DEBUG
-                Url = "/credits", 
-#else
-                Url = "/ZwiepsHaakHoek/credits",
-#endif
-                DisplayText = Localizer["Credits"] 
-            },
-            new() 
-            { 
-#if DEBUG
-                Url = "/about", 
-#else
-                Url = "/ZwiepsHaakHoek/about",
-#endif
-                DisplayText = Localizer["About"] 
-            }
+            new() { Url = "/products", DisplayText = Localizer["Products"] },
+            new() { Url = "/contact", DisplayText = Localizer["Contact"] },
+            new() { Url = "/credits", DisplayText = Localizer["Credits"] },
+            new() { Url = "/about", DisplayText = Localizer["About"] }
+//            new() 
+//            {
+//#if DEBUG
+//                Url = "/products",
+//#else
+//                Url = "/ZwiepsHaakHoek/products",
+//#endif
+//                DisplayText = Localizer["Products"] 
+//            },
+//            new() 
+//            { 
+//#if DEBUG
+//                Url = "/contact", 
+//#else
+//                Url = "/ZwiepsHaakHoek/contact",
+//#endif
+//                DisplayText = Localizer["Contact"] 
+//            },
+//            new() 
+//            {
+//#if DEBUG
+//                Url = "/credits", 
+//#else
+//                Url = "/ZwiepsHaakHoek/credits",
+//#endif
+//                DisplayText = Localizer["Credits"] 
+//            },
+//            new() 
+//            { 
+//#if DEBUG
+//                Url = "/about", 
+//#else
+//                Url = "/ZwiepsHaakHoek/about",
+//#endif
+//                DisplayText = Localizer["About"] 
+//            }
         };
     }
 }
