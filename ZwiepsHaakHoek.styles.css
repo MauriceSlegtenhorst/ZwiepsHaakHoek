@@ -1,4 +1,15 @@
 /* /Shared/Components/Carousel.razor.rz.scp.css */
+:root[b-wdhm4luc81] {
+  --size-xx-s: 2px;
+  --size-x-s: 4px;
+  --size-s: 8px;
+  --size-md: 16px;
+  --size-lg: 32px;
+  --size-x-lg: 64px;
+  --size-xx-lg: 128px;
+  --size-phone: 700px;
+}
+
 .carousel-container[b-wdhm4luc81] {
   position: relative;
   margin: auto;
@@ -40,16 +51,16 @@
   position: absolute;
   bottom: 0;
   width: 25%;
-  display: flex;
   left: 37.5%;
+  padding: var(--size-md) 0 var(--size-md) 0;
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  padding: var(--size-md) 0 var(--size-md) 0;
 }
 .carousel-container > .circle-container > .fa-circle[b-wdhm4luc81] {
   color: var(--color-gray);
-  font-size: 0.75em;
+  font-size: var(--size-sm);
   cursor: pointer;
   transition: color 0.6s ease;
 }
@@ -57,11 +68,20 @@
   color: var(--color-gray-dark);
 }
 .carousel-container > .circle-container > .fa-circle.selected[b-wdhm4luc81] {
-  font-size: 1em;
-  color: var(--color-gray-dark);
+  color: var(--color-primary);
 }
 .carousel-container > .circle-container > .fa-circle.selected:hover[b-wdhm4luc81] {
-  color: var(--color-gray-dark-2x);
+  color: var(--color-primary-dark-2x);
+}
+
+@media (max-width: 700px) {
+  .carousel-container > .circle-container[b-wdhm4luc81] {
+    width: 50%;
+    left: 25%;
+  }
+  .carousel-container > [class*=move-]:hover[b-wdhm4luc81] {
+    background-color: unset;
+  }
 }
 /* /Shared/Components/LanguageSelector.razor.rz.scp.css */
 .language-icon[b-r2x4fguj9u] {
@@ -69,6 +89,17 @@
   padding: var(--size-md);
 }
 /* /Shared/Components/NavBar.razor.rz.scp.css */
+:root[b-0hu58fpzek] {
+  --size-xx-s: 2px;
+  --size-x-s: 4px;
+  --size-s: 8px;
+  --size-md: 16px;
+  --size-lg: 32px;
+  --size-x-lg: 64px;
+  --size-xx-lg: 128px;
+  --size-phone: 700px;
+}
+
 .navbar-container[b-0hu58fpzek] {
   z-index: 1;
   position: absolute;
@@ -104,6 +135,7 @@
   height: var(--size-lg);
   padding: var(--size-lg);
   font-size: xx-large;
+  color: var(--color-gray);
 }
 .navbar-container > .hamburger:hover[b-0hu58fpzek] {
   cursor: pointer;
@@ -128,9 +160,6 @@
   }
   .navbar-container.expanded[b-0hu58fpzek] {
     justify-content: space-between;
-  }
-  .navbar-container.expanded > .logo[b-0hu58fpzek] {
-    display: none;
   }
   .navbar-container.expanded > .links[b-0hu58fpzek] {
     position: absolute;
