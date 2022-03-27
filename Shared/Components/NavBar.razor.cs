@@ -5,7 +5,7 @@ namespace ZwiepsHaakHoek.Shared.Components
     public partial class NavBar
     {
         private bool _expanded;
-        private string navContainerCSS => _expanded ? " expanded" : null;
+        private string _navContainerCSS => _expanded ? " expanded" : null;
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
