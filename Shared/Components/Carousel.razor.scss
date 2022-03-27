@@ -1,4 +1,6 @@
-﻿.carousel-container {
+﻿@import "../../Styles/_Dimensions.scss";
+
+.carousel-container {
     position: relative;
     margin: auto;
     background-color: var(--color-black-light-2x);
@@ -45,16 +47,16 @@
         position: absolute;
         bottom: 0;
         width: $CONTAINER_WIDTH;
-        display: flex;
         left: calc(50% - $CONTAINER_WIDTH / 2);
+        padding: var(--size-md) 0 var(--size-md) 0;
+        display: flex;
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
-        padding: var(--size-md) 0 var(--size-md) 0;
 
         > .fa-circle {
             color: var(--color-gray);
-            font-size: .75em;
+            font-size: var(--size-sm);
             cursor: pointer;
             transition: color 0.6s ease;
 
@@ -63,12 +65,29 @@
             }
 
             &.selected {
-                font-size: 1em;
-                color: var(--color-gray-dark);
+                color: var(--color-primary);
 
                 &:hover {
-                    color: var(--color-gray-dark-2x)
+                    color: var(--color-primary-dark-2x)
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($dimensions, 'phone')) {
+    .carousel-container {
+
+        > .circle-container {
+            $CONTAINER_WIDTH: 50%;
+            width: $CONTAINER_WIDTH;
+            left: calc(50% - $CONTAINER_WIDTH / 2);
+        }
+
+        > [class*="move-"] {
+
+            &:hover {
+                background-color: unset;
             }
         }
     }

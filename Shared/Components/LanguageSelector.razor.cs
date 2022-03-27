@@ -16,9 +16,6 @@ namespace ZwiepsHaakHoek.Shared.Components
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
-        [Parameter]
-        public string CssClass { get; set; }
-
         protected override async Task OnInitializedAsync()
         {
             

@@ -12,6 +12,7 @@ namespace ZwiepsHaakHoek.Shared.Components
 
         private int _index;
 
+        private Image[] _images;
         [Parameter, EditorRequired]
         public Func<Image[]> Images { get; set; }
 
@@ -44,6 +45,8 @@ namespace ZwiepsHaakHoek.Shared.Components
                 _timer.Enabled = true;
                 _timer.Start();
             }
+
+            _images = Images.Invoke();
 
             await base.OnInitializedAsync();
         }

@@ -1,6 +1,6 @@
 ﻿@typeparam TOption
 
-<div class="select-container@(CssClass + (IsExpanded ? " expanded" : null))">
+<div class="@CssClass">
 
     <div class="select" @onclick="OnSelectClick">
         @SelectedOptionTemplate(SelectedOption)

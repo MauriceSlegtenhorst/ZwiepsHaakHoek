@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Routing;
+using ZwiepsHaakHoek.Utilities;
 
 namespace ZwiepsHaakHoek.Shared.Components
 {
     public partial class NavBar : IDisposable
     {
-        private bool expanded;
-        private string navContainerCSS => expanded ? " expanded" : null;
+        private bool _expanded;
+
+        private readonly CssClass _cssClass = new("navbar-container");
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
@@ -26,11 +28,19 @@ namespace ZwiepsHaakHoek.Shared.Components
             GC.SuppressFinalize(this);
         }
 
-        private void OnHamburgerClick() => expanded = !expanded;
+        private void OnHamburgerClick()
+        {
+            _expanded = !_expanded;
+
+            if (_expanded)
+                _cssClass.Add("expanded");
+            else
+                _cssClass.Remove("expanded");
+        } 
 
         private void OnLocationChanged(object sender, LocationChangedEventArgs args)
         {
-            expanded = false;
+            _expanded = false;
             StateHasChanged();
         } 
 
