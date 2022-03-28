@@ -1,6 +1,5 @@
 ﻿using Contentful.Core;
 using Contentful.Core.Errors;
-using Contentful.Core.Models;
 using Contentful.Core.Models.Management;
 using Contentful.Core.Search;
 using System.Globalization;
@@ -19,6 +18,10 @@ namespace ZwiepsHaakHoek.Services.Localization
         private readonly ILocalStorage _localStorage;
         private readonly IBrowser _browser;
         private readonly IContentfulClient _contentfulClient;
+
+        private bool _isInitialSetup = true;
+
+        public event EventHandler LanguageChanged;
 
         private Culture _selectedCulture;
         public Culture SelectedCulture => _selectedCulture;
@@ -46,6 +49,8 @@ namespace ZwiepsHaakHoek.Services.Localization
 
             if (!isCultureSet)
                 await TrySetCultureAsync("nl");
+
+            _isInitialSetup = false;
         }
 
         public async Task<bool> TrySetCultureAsync(string languageCode)
@@ -69,6 +74,9 @@ namespace ZwiepsHaakHoek.Services.Localization
             
             _selectedCulture = _supportedCultures.First(culture => culture.Locale.Code[..2] == languageCode);
 
+            if(!_isInitialSetup)
+                LanguageChanged?.Invoke(this, EventArgs.Empty);
+
             return true;
         }
 
@@ -83,7 +91,7 @@ namespace ZwiepsHaakHoek.Services.Localization
             try
             {
                 locales = (await _contentfulClient.GetLocales()).ToArray();
-                var builder = QueryBuilder<CFLanguageIcon>.New.ContentTypeIs(ContentfulContentTypes.LANGUAGE_ICON);
+                QueryBuilder<CFLanguageIcon> builder = QueryBuilder<CFLanguageIcon>.New.ContentTypeIs(ContentfulContentTypes.LANGUAGE_ICON);
                 cFLanguageIcons = (await _contentfulClient.GetEntries<CFLanguageIcon>(builder)).ToArray();
             }
             catch (ContentfulException ex)

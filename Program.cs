@@ -11,9 +11,9 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddServices(builder.Configuration, builder.HostEnvironment.BaseAddress);
 
-var host = builder.Build();
+WebAssemblyHost host = builder.Build();
 
-var localization = host.Services.GetRequiredService<ILocalization>();
+ILocalization localization = host.Services.GetRequiredService<ILocalization>();
 await localization.SetInitialCultureAsync();
 
 await host.RunAsync();

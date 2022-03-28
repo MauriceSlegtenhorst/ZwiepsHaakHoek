@@ -5,6 +5,7 @@ namespace ZwiepsHaakHoek.Services.Localization
 {
     public interface ILocalization
     {
+        event EventHandler LanguageChanged;
         Task SetInitialCultureAsync();
         Task<bool> TrySetCultureAsync(string cultureName);
         Culture SelectedCulture { get; }

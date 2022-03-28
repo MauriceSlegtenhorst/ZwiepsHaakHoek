@@ -2,7 +2,7 @@
     <a class="logo" href="@UrlService.CreateUrl("/")">Zwieps Haak Hoek</a>
     
     <div class="links">
-        @foreach (NavLink navLink in NavLinks.Invoke())
+        @foreach (NavLink navLink in _navLinks)
         {
             <a class="@(navLink.CssClass)" href="@navLink.Url">@navLink.DisplayText</a>
         }

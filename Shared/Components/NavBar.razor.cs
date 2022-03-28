@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Routing;
+using ZwiepsHaakHoek.Services.Localization;
 using ZwiepsHaakHoek.Services.UrlService;
 using ZwiepsHaakHoek.Utilities;
 
@@ -17,19 +18,35 @@ namespace ZwiepsHaakHoek.Shared.Components
         [Inject]
         public IUrlService UrlService { get; set; }
 
+        [Inject]
+        public ILocalization Localization { get; set; }
+
+        private NavLink[] _navLinks;
         [Parameter, EditorRequired]
         public Func<NavLink[]> NavLinks { get; set; }
-
-        protected override Task OnInitializedAsync()
-        {
-            NavigationManager.LocationChanged += OnLocationChanged;
-            return base.OnInitializedAsync();
-        }
 
         public void Dispose()
         {
             NavigationManager.LocationChanged -= OnLocationChanged;
+            Localization.LanguageChanged -= OnLanguageChanged;
             GC.SuppressFinalize(this);
+        }
+
+        public void OnLanguageChanged(object sender, EventArgs args)
+        {
+            _navLinks = NavLinks.Invoke();
+
+            StateHasChanged();
+        }
+
+        protected override async Task OnInitializedAsync()
+        {
+            _navLinks = NavLinks.Invoke();
+
+            NavigationManager.LocationChanged += OnLocationChanged;
+            Localization.LanguageChanged += OnLanguageChanged;
+
+            await base.OnInitializedAsync();
         }
 
         private void OnHamburgerClick()
