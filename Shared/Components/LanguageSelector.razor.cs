@@ -13,9 +13,6 @@ namespace ZwiepsHaakHoek.Shared.Components
         [Inject]
         public IContentfulClient ContentfulClient { get; set; }
 
-        [Inject]
-        public NavigationManager NavigationManager { get; set; }
-
         protected override async Task OnInitializedAsync()
         {
             
@@ -31,8 +28,6 @@ namespace ZwiepsHaakHoek.Shared.Components
                 // TODO show error or do something
                 return;
             }
-
-            NavigationManager.NavigateTo(NavigationManager.Uri, true);
         }
 
         private async Task OnLanguageClick(Culture culture)

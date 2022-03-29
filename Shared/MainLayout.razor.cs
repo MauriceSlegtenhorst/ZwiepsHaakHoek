@@ -1,26 +1,25 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Localization;
-using ZwiepsHaakHoek.Shared.ResourceFiles;
 using ZwiepsHaakHoek.Shared.Components;
 using ZwiepsHaakHoek.Services.UrlService;
+using ZwiepsHaakHoek.Services.Interpreter;
 
 namespace ZwiepsHaakHoek.Shared
 {
     public partial class MainLayout
     {
         [Inject]
-        public IStringLocalizer<Resource> Localizer { get; set; }
+        public IInterpreter Interpreter { get; set; }
 
         [Inject]
         public IUrlService UrlService { get; set; }
 
         private NavBar.NavLink[] NavLinks() => new NavBar.NavLink[] 
         {
-            new() { Url = UrlService.CreateUrl("/"), DisplayText = Localizer["Home"] },
-            new() { Url = UrlService.CreateUrl("/products"), DisplayText = Localizer["Products"] },
-            new() { Url = UrlService.CreateUrl("/contact"), DisplayText = Localizer["Contact"] },
-            new() { Url = UrlService.CreateUrl("/credits"), DisplayText = Localizer["Credits"] },
-            new() { Url = UrlService.CreateUrl("/about"), DisplayText = Localizer["About"] }
+            new() { Url = UrlService.CreateUrl("/"), DisplayText = Interpreter["Home"] },
+            new() { Url = UrlService.CreateUrl("/products"), DisplayText = Interpreter["Products"] },
+            new() { Url = UrlService.CreateUrl("/contact"), DisplayText = Interpreter["Contact"] },
+            new() { Url = UrlService.CreateUrl("/credits"), DisplayText = Interpreter["Credits"] },
+            new() { Url = UrlService.CreateUrl("/about"), DisplayText = Interpreter["About"] }
         };
     }
 }
