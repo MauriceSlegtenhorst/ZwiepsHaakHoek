@@ -3,10 +3,9 @@ using Contentful.Core.Errors;
 using Contentful.Core.Models;
 using Contentful.Core.Search;
 using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Localization;
 using ZwiepsHaakHoek.Models.Contentful;
+using ZwiepsHaakHoek.Services.Interpreter;
 using ZwiepsHaakHoek.Services.Localization;
-using ZwiepsHaakHoek.Shared.ResourceFiles;
 
 namespace ZwiepsHaakHoek.Pages
 {
@@ -22,7 +21,7 @@ namespace ZwiepsHaakHoek.Pages
         public ILocalization Localization { get; set; }
 
         [Inject]
-        public IStringLocalizer<Resource> Localizer { get; set; }
+        public IInterpreter Interpreter { get; set; }
 
         public CFIndex CFIndex { get; set; }
 
