@@ -12,44 +12,42 @@
                     {
                         "nl" => NL_ABOUT,
                         "de" => DE_ABOUT,
-                        _ => throw new KeyNotFoundException(LanguageNotFound(language)),
+                        _ => NL_ABOUT,
                     },
                     "Contact" => language switch
                     {
                         "nl" => NL_CONTACT,
                         "de" => DE_CONTACT,
-                        _ => throw new KeyNotFoundException(LanguageNotFound(language)),
+                        _ => NL_CONTACT,
                     },
                     "Credits" => language switch
                     {
                         "nl" => NL_CREDITS,
                         "de" => DE_CREDITS,
-                        _ => throw new KeyNotFoundException(LanguageNotFound(language)),
+                        _ => NL_CREDITS,
                     },
                     "Home" => language switch
                     {
                         "nl" => NL_HOME,
                         "de" => DE_HOME,
-                        _ => throw new KeyNotFoundException(LanguageNotFound(language)),
+                        _ => NL_HOME,
                     },
                     "LoadingPageContent" => language switch
                     {
                         "nl" => NL_LOADING_PAGE_CONTENT,
                         "de" => DE_LOADING_PAGE_CONTENT,
-                        _ => throw new KeyNotFoundException(LanguageNotFound(language)),
+                        _ => DE_LOADING_PAGE_CONTENT,
                     },
                     "Products" => language switch
                     {
                         "nl" => NL_PRODUCTS,
                         "de" => DE_PRODUCTS,
-                        _ => throw new KeyNotFoundException(LanguageNotFound(language)),
+                        _ => NL_PRODUCTS,
                     },
                     _ => throw new KeyNotFoundException($"No translation found for key: \"{ key }\"."),
                 };
             }
         }
-
-        private string LanguageNotFound(string language) => $"Language: \"{language}\" is not supported.";
 
         private const string NL_ABOUT = "Over mij";
         private const string DE_ABOUT = "Über mich";
