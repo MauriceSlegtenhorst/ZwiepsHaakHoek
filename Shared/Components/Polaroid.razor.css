@@ -9,6 +9,3 @@
   padding: var(--size-md);
   background-color: var(--color-black-light-2x);
 }
-.polaroid-container > .footer * {
-  margin: 0;
-}
