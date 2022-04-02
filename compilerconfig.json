@@ -30,5 +30,9 @@
   {
     "outputFile": "Pages/Index.razor.css",
     "inputFile": "Pages/Index.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Components/Polaroid.razor.css",
+    "inputFile": "Shared/Components/Polaroid.razor.scss"
   }
 ]

@@ -2,7 +2,7 @@
 @using ZwiepsHaakHoek.Models.Contentful
 @using System.Linq
 
-<PageTitle>Zieps Haak Hoek</PageTitle>
+<PageTitle>Zieps Haak Hoek - @Interpreter["Home"]</PageTitle>
 
 @if(CFIndex is not null)
 {
@@ -14,6 +14,21 @@
     <div class="intro">
         @((MarkupString)IntroHTML)
     </div>
+
+    if(CFIndex.LatestProduct is not null)
+    {
+        <div class="latest-product">
+            <Polaroid Image="() => new Image{ Url = CFIndex.LatestProduct.Images[0].File.Url, Alt = CFIndex.LatestProduct.Images[0].Description }">
+                <Footer>
+                    <h6>@CFIndex.LatestProduct.Title</h6>
+                    <p>
+                        @((MarkupString)Interpreter["Price", CFIndex.LatestProduct.Price.ToString()])
+                        @CFIndex.LatestProduct.Description
+                    </p>
+                </Footer>
+            </Polaroid>
+        </div>
+    }
 }
 else
 {

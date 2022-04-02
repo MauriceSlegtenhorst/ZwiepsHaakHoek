@@ -7254,12 +7254,30 @@ body {
   margin: 0;
   background-color: var(--color-black);
   font-family: "Roboto", sans-serif;
-  font-size: large;
+  font-size: 1.2em;
   font-weight: 500;
   color: var(--color-white);
 }
 body h1, body h2, body h3, body h4, body h5, body h6 {
   color: var(--color-primary);
+}
+body h1 {
+  font-size: 2em;
+}
+body h2 {
+  font-size: 1.8em;
+}
+body h3 {
+  font-size: 1.6em;
+}
+body h4 {
+  font-size: 1.4em;
+}
+body h5 {
+  font-size: 1.2em;
+}
+body h6 {
+  font-size: 1em;
 }
 body a {
   text-decoration: none;
