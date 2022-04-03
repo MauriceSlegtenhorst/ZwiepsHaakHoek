@@ -9,7 +9,7 @@
     width: 100%;
     margin-bottom: var(--size-md);
 
-    .latest-product{
+    > .latest-product{
         width: 33%;
     }
 
@@ -22,7 +22,7 @@
 @media (max-width: map-get($dimensions, 'phone')) {
     .latest-product-container {
 
-        .latest-product {
+        > .latest-product {
             width: 75%;
         }
     }
