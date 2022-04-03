@@ -17,16 +17,18 @@
 
     if(CFIndex.LatestProduct is not null)
     {
-        <div class="latest-product">
-            <Polaroid Image="() => new Image{ Url = CFIndex.LatestProduct.Images[0].File.Url, Alt = CFIndex.LatestProduct.Images[0].Description }">
-                <Footer>
-                    <h6>@CFIndex.LatestProduct.Title</h6>
-                    <p>
-                        @((MarkupString)Interpreter["Price", CFIndex.LatestProduct.Price.ToString()])
-                        @CFIndex.LatestProduct.Description
-                    </p>
-                </Footer>
-            </Polaroid>
+        <div class="latest-product-container">
+            <div class="latest-product">
+                <Polaroid Image="() => new Image{ Url = CFIndex.LatestProduct.Images[0].File.Url, Alt = CFIndex.LatestProduct.Images[0].Description }">
+                    <Footer>
+                        <h6>@CFIndex.LatestProduct.Title</h6>
+
+                        <span>@((MarkupString)Interpreter["Price", CFIndex.LatestProduct.Price.ToString()])</span>
+                        <br><br>
+                        <span>@CFIndex.LatestProduct.Description</span>
+                    </Footer>
+                </Polaroid>
+            </div>
         </div>
     }
 }

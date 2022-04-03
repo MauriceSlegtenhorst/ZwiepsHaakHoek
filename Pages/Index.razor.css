@@ -2,13 +2,16 @@
   padding: 0 var(--size-md) 0 var(--size-md);
 }
 
-.latest-product {
+.latest-product-container {
   display: flex;
   justify-content: center;
-  width: 33%;
-  height: 300px;
+  width: 100%;
+  margin-bottom: var(--size-md);
 }
-.latest-product h1, .latest-product h2, .latest-product h3, .latest-product h4, .latest-product h5, .latest-product h6 {
+.latest-product-container .latest-product {
+  width: 33%;
+}
+.latest-product-container h1, .latest-product-container h2, .latest-product-container h3, .latest-product-container h4, .latest-product-container h5, .latest-product-container h6 {
   margin-block-start: 0;
   margin-block-end: 1.33em;
 }

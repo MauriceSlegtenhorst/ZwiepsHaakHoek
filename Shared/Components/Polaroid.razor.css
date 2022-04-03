@@ -4,6 +4,7 @@
 .polaroid-container > img {
   width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 .polaroid-container > .footer {
   padding: var(--size-md);
