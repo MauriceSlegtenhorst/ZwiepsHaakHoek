@@ -20,7 +20,7 @@
   width: 100%;
   margin-bottom: var(--size-md);
 }
-.latest-product-container .latest-product[b-2sbfutiag3] {
+.latest-product-container > .latest-product[b-2sbfutiag3] {
   width: 33%;
 }
 .latest-product-container h1[b-2sbfutiag3], .latest-product-container h2[b-2sbfutiag3], .latest-product-container h3[b-2sbfutiag3], .latest-product-container h4[b-2sbfutiag3], .latest-product-container h5[b-2sbfutiag3], .latest-product-container h6[b-2sbfutiag3] {
@@ -29,7 +29,7 @@
 }
 
 @media (max-width: 700px) {
-  .latest-product-container .latest-product[b-2sbfutiag3] {
+  .latest-product-container > .latest-product[b-2sbfutiag3] {
     width: 75%;
   }
 }
@@ -221,6 +221,7 @@
 }
 /* /Shared/Components/Polaroid.razor.rz.scp.css */
 .polaroid-container[b-vgtug7kxoz] {
+  background-color: var(--color-black-light-2x);
   box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 }
 .polaroid-container > img[b-vgtug7kxoz] {
@@ -230,7 +231,6 @@
 }
 .polaroid-container > .footer[b-vgtug7kxoz] {
   padding: var(--size-md);
-  background-color: var(--color-black-light-2x);
 }
 /* /Shared/Components/Select.razor.rz.scp.css */
 :root[b-mhkx04khao] {
