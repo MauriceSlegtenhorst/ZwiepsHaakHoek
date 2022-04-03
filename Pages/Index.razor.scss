@@ -1,6 +1,7 @@
 ﻿.intro {
     padding: 0 var(--size-md) 0 var(--size-md)
 }
+@import "../Styles/_Dimensions.scss";
 
 .latest-product-container {
     display: flex;
@@ -15,5 +16,14 @@
     h1, h2, h3, h4, h5, h6 {
         margin-block-start: 0;
         margin-block-end: 1.33em;
+    }
+}
+
+@media (max-width: map-get($dimensions, 'phone')) {
+    .latest-product-container {
+
+        .latest-product {
+            width: 75%;
+        }
     }
 }
