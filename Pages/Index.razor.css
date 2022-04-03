@@ -19,7 +19,7 @@
   width: 100%;
   margin-bottom: var(--size-md);
 }
-.latest-product-container .latest-product {
+.latest-product-container > .latest-product {
   width: 33%;
 }
 .latest-product-container h1, .latest-product-container h2, .latest-product-container h3, .latest-product-container h4, .latest-product-container h5, .latest-product-container h6 {
@@ -28,7 +28,7 @@
 }
 
 @media (max-width: 700px) {
-  .latest-product-container .latest-product {
+  .latest-product-container > .latest-product {
     width: 75%;
   }
 }

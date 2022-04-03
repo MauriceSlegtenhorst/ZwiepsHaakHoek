@@ -1,4 +1,5 @@
 ﻿.polaroid-container {
+  background-color: var(--color-black-light-2x);
   box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 }
 .polaroid-container > img {
@@ -8,5 +9,4 @@
 }
 .polaroid-container > .footer {
   padding: var(--size-md);
-  background-color: var(--color-black-light-2x);
 }
