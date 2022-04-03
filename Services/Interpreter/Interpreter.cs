@@ -6,6 +6,6 @@ namespace ZwiepsHaakHoek.Services.Interpreter
     {
         private readonly InterpreterDictionairy _interpreterDictionairy = new();
 
-        public string this[string key] => _interpreterDictionairy[CultureInfo.DefaultThreadCurrentUICulture.Name, key];
+        public string this[string key, params string[] formatParams] => _interpreterDictionairy[CultureInfo.DefaultThreadCurrentUICulture.Name, key, formatParams];
     }
 }

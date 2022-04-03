@@ -2,6 +2,6 @@
 {
     public interface IInterpreter
     {
-        public string this[string key] { get; }
+        public string this[string key, params string[] formatParams] { get; }
     }
 }

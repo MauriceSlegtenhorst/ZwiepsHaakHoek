@@ -2,7 +2,7 @@
 {
     public class InterpreterDictionairy
     {
-        public string this[string language, string key]
+        public string this[string language, string key, params string[] formatParams]
         {
             get 
             {
@@ -44,6 +44,18 @@
                         "de" => DE_PRODUCTS,
                         _ => NL_PRODUCTS,
                     },
+                    "Price" => language switch
+                    {
+                        "nl" => (formatParams is not null && formatParams.Length is 1) 
+                        ? string.Format("{0}: {1} {2}", formatParams.Prepend(NL_CurrencyLogo).Prepend(NL_PRICE).ToArray())
+                        : NL_PRICE,
+                        "de" => (formatParams is not null && formatParams.Length is 1)
+                        ? string.Format("{0}: {1} {2}", formatParams.Prepend(DE_PRICE).Append(DE_CurrencyLogo).ToArray())
+                        : DE_PRICE,
+                        _ => (formatParams is not null && formatParams.Length is 1)
+                        ? string.Format("{0}: {1} {2}", formatParams.Prepend(NL_CurrencyLogo).Prepend(NL_PRICE).ToArray())
+                        : NL_PRICE,
+                    },
                     _ => throw new KeyNotFoundException($"No translation found for key: \"{ key }\"."),
                 };
             }
@@ -66,5 +78,11 @@
 
         private const string NL_PRODUCTS = "Producten";
         private const string DE_PRODUCTS = "Produkte";
+
+        private const string NL_PRICE = "Prijs";
+        private const string DE_PRICE = "Preis";
+
+        private const string NL_CurrencyLogo = "&#8364;";
+        private const string DE_CurrencyLogo = "CHF";
     }
 }
