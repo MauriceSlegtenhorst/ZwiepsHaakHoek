@@ -1,5 +1,6 @@
 /* /Pages/Index.razor.rz.scp.css */
 .intro[b-2sbfutiag3] {
+  margin: var(--size-xx-lg) var(--size-lg) var(--size-xx-lg) var(--size-lg);
   padding: 0 var(--size-md) 0 var(--size-md);
 }
 
@@ -18,7 +19,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: var(--size-md);
+  margin-bottom: var(--size-xx-lg);
 }
 .latest-product-container > .latest-product[b-2sbfutiag3] {
   width: 33%;
