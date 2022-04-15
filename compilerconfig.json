@@ -34,5 +34,9 @@
   {
     "outputFile": "Shared/Components/Polaroid.razor.css",
     "inputFile": "Shared/Components/Polaroid.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Components/Popup.razor.css",
+    "inputFile": "Shared/Components/Popup.razor.scss"
   }
 ]
