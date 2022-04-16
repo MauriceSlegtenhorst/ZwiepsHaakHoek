@@ -113,31 +113,25 @@ namespace ZwiepsHaakHoek.Utilities
 
         public bool Remove(string item)
         {
-            if (IsReadOnly || !Classes.Contains(item))
+            if (IsReadOnly || Classes.Length == 0)
                 return false;
 
-            int newLength = Classes.Length - 1;
-            var newClasses = new string[newLength];
+            var newClasses = new string[Classes.Length - 1];
             bool isRemoved = false;
 
-            for (int i = 0; i < newLength; i++)
+            for (int i = 0; i < Classes.Length; i++)
             {
                 if (Classes[i] == item)
                 {
-                    newClasses[i] = Classes[i + 1];
                     isRemoved = true;
                 }
                 else
                 {
-                    newClasses[i] = Classes[isRemoved ? i + 1 : i];
+                    newClasses[i] = Classes[isRemoved ? i-1 : i];
                 }
             }
 
-            if (isRemoved)
-            {
-                Classes = newClasses;
-            }
-            
+            Classes = newClasses;
             return isRemoved;
         }
 
