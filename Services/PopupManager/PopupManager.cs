@@ -31,30 +31,13 @@ namespace ZwiepsHaakHoek.Services.PopupManager
             if (popupContent is null)
                 throw new ArgumentNullException(nameof(popupContent));
 
-            if(_popups.Length == 0)
+            if (_popups.Length == 0)
                 return false;
 
-            int newLength = _popups.Length - 1;
-
-            if(newLength == 0)
-            {
-                if (_popups[0] == popupContent)
-                {
-                    _popups = Array.Empty<RenderFragment>();
-                    OnPopupsChanged?.Invoke(popupContent);
-
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-            var newPopupsArray = new RenderFragment[newLength];
+            var newPopups = new RenderFragment[_popups.Length - 1];
             bool isRemoved = false;
 
-            for (int i = 0; i < newLength; i++)
+            for (int i = 0; i < _popups.Length; i++)
             {
                 if (_popups[i] == popupContent)
                 {
@@ -62,15 +45,12 @@ namespace ZwiepsHaakHoek.Services.PopupManager
                 }
                 else
                 {
-                    newPopupsArray[i] = _popups[isRemoved ? i + 1 : i];
+                    newPopups[i] = _popups[isRemoved ? i - 1 : i];
                 }
             }
 
-            if (isRemoved)
-            {
-                _popups = newPopupsArray;
-                OnPopupsChanged?.Invoke(popupContent);
-            }
+            _popups = newPopups;
+            OnPopupsChanged.Invoke(popupContent);
             return isRemoved;
         }
 

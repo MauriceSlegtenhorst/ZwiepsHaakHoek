@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: var(--size-xx-lg);
+  padding-bottom: var(--size-xx-lg);
 }
 .latest-product-container > .latest-product {
   width: 33%;
