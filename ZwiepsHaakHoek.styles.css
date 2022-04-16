@@ -19,7 +19,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: var(--size-xx-lg);
+  padding-bottom: var(--size-xx-lg);
 }
 .latest-product-container > .latest-product[b-2sbfutiag3] {
   width: 33%;
@@ -147,7 +147,6 @@
   align-content: center;
   align-items: center;
   background-color: transparent;
-  transition: background-color 1s ease 0s;
 }
 .navbar-container > .logo[b-0hu58fpzek] {
   padding: var(--size-lg);
@@ -190,20 +189,23 @@
   }
   .navbar-container > .language-selector-container[b-0hu58fpzek] {
     display: none;
+    align-self: flex-start;
   }
   .navbar-container > .hamburger[b-0hu58fpzek] {
     display: block;
+    align-self: flex-start;
   }
   .navbar-container.expanded[b-0hu58fpzek] {
     justify-content: space-between;
+    height: 100%;
+    background-color: var(--color-black-light-2x);
   }
   .navbar-container.expanded > .links[b-0hu58fpzek] {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background-color: var(--color-black-light-2x);
     display: flex;
     align-content: center;
     justify-content: center;
@@ -258,7 +260,7 @@
 }
 .popup-container > .popup[b-m4uljqehmv] {
   background-color: var(--color-black-light-2x);
-  overflow: scroll;
+  overflow: auto;
 }
 /* /Shared/Components/Select.razor.rz.scp.css */
 :root[b-mhkx04khao] {
