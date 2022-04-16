@@ -12,6 +12,8 @@ namespace ZwiepsHaakHoek.Shared.Components
         [Parameter]
         public RenderFragment Footer { get; set; }
 
+        public Popup FullImagePopup { get; set; }
+
         protected override Task OnInitializedAsync()
         {
             _image = Image.Invoke();
