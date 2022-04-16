@@ -7300,6 +7300,7 @@ body > #app > .initial-loading-screen {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: var(--size-lg);
 }
 body > #app > .initial-loading-screen > #logo {
   width: 50vw;
