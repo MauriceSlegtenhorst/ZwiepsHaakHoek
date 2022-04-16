@@ -23,9 +23,10 @@
                     <Footer>
                         <h6>@CFIndex.LatestProduct.Title</h6>
 
-                        <span>@((MarkupString)Interpreter["Price", CFIndex.LatestProduct.Price.ToString()])</span>
-
-                        <span>@CFIndex.LatestProduct.Description</span>
+                        @((MarkupString)Interpreter["Price", CFIndex.LatestProduct.Price.ToString()])
+                        <br/>
+                        <br/>
+                        @CFIndex.LatestProduct.Description
                     </Footer>
                 </Polaroid>
             </div>
