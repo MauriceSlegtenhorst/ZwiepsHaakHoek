@@ -73,6 +73,11 @@ body {
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            gap: var(--size-lg);
+
+            > #loading-text{
+
+            }
 
             > #logo {
                 width: 50vw;

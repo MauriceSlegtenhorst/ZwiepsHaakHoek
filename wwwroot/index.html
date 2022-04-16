@@ -13,6 +13,7 @@
     <body>
         <div id="app">
             <div class="initial-loading-screen">
+                <span id="loading-text"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="logo" viewBox="0 0 182.4 240" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
                     <g id="zwiepshaakhoek-g1" transform="translate(-183.789993-115.000313)">
                         <g id="zwiepshaakhoek-g2">
@@ -38,15 +39,28 @@
                         </g>
                     </g>
                 </svg>
-                <!--TODO create loading svg-->
-                <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
-                    <g>
-                        <circle cx="50" cy="50" r="20" stroke-width="15" fill="none" />
-                    </g>
-                </svg>-->
             </div>
         </div>
+        <script>
+            var lang = window.localStorage['culture-name'];
 
+            if(lang === null || lang.length === 0){
+                lang = (navigator.languages && navigator.languages.length)
+                    ? navigator.languages[0]
+                    : navigator.language || 'nl';
+            }
+
+            var loadingTextElement = document.getElementById('loading-text');
+
+            if(lang.substring(0, 2) == 'de')
+            {
+                loadingTextElement.innerHTML = 'Website wird geladen...';
+            }
+            else
+            {
+                loadingTextElement.innerHTML = 'Bezig met laden...';
+            }
+        </script>
         <script src="_framework/blazor.webassembly.js"></script>
     </body>
 
