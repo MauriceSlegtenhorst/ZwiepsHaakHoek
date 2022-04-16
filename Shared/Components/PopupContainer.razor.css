@@ -11,4 +11,5 @@
 }
 .popup-container > .popup {
   background-color: var(--color-black-light-2x);
+  overflow: scroll;
 }
