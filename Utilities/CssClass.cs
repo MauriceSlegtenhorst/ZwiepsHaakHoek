@@ -133,7 +133,11 @@ namespace ZwiepsHaakHoek.Utilities
                 }
             }
 
-            Classes = newClasses;
+            if (isRemoved)
+            {
+                Classes = newClasses;
+            }
+            
             return isRemoved;
         }
 

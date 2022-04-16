@@ -2,6 +2,7 @@
 using ZwiepsHaakHoek.Services.Interpreter;
 using ZwiepsHaakHoek.Services.Localization;
 using ZwiepsHaakHoek.Services.LocalStorage;
+using ZwiepsHaakHoek.Services.PopupManager;
 using ZwiepsHaakHoek.Services.UrlService;
 
 namespace ZwiepsHaakHoek.Extensions.ServiceCollection
@@ -13,6 +14,7 @@ namespace ZwiepsHaakHoek.Extensions.ServiceCollection
             // TODO maybe changing baseadres here wil help wioth github pages base url problem. Prob not
             services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseAddress) });
             services.AddContentfulServices(configuration);
+            services.AddSingleton<IPopupManager, PopupManager>();
             services.AddSingleton<IInterpreter, Interpreter>();
             services.AddSingleton<IBrowser, Browser>();
             services.AddSingleton<ILocalStorage, LocalStorage>();

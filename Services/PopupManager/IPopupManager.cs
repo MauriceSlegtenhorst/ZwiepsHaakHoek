@@ -2,8 +2,12 @@
 
 namespace ZwiepsHaakHoek.Services.PopupManager
 {
-    public interface IPopupManager
+    public interface IPopupManager : ICollection<RenderFragment>
     {
-        public List<RenderFragment> Popups { get; set; }
+        public delegate void PopupsChanged(RenderFragment popupContent);
+
+        public event PopupsChanged OnPopupsChanged;
+
+        public int IndexOf(RenderFragment popupContent);
     }
 }
