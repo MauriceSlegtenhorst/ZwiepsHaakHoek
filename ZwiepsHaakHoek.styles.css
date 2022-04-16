@@ -258,6 +258,7 @@
 }
 .popup-container > .popup[b-m4uljqehmv] {
   background-color: var(--color-black-light-2x);
+  overflow: scroll;
 }
 /* /Shared/Components/Select.razor.rz.scp.css */
 :root[b-mhkx04khao] {
