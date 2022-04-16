@@ -1,5 +1,7 @@
 ﻿<div class="polaroid-container">
 
+    <i class="fa-solid fa-expand expand-button" @onclick="() => FullImagePopup?.ShowPopup()"/>
+
     <img src="@_image.Url" alt="@_image.Alt" />
 
     @if(Footer is not null)
@@ -10,3 +12,9 @@
     }
 
 </div>
+
+<Popup @ref="FullImagePopup">
+    <Content>
+        <img src="@_image.Url" alt="@_image.Alt" @onclick="FullImagePopup.HidePopup"/>
+    </Content>
+</Popup>

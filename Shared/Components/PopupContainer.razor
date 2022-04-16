@@ -1,0 +1,11 @@
+﻿@if(PopupManager is not null && PopupManager.Count > 0)
+{
+    <div class="popup-container">
+        @foreach (RenderFragment fragment in PopupManager)
+        {
+            <div class="popup" style="z-index: @(101 + PopupManager.IndexOf(fragment));">
+                @fragment
+            </div>
+        }
+    </div>
+}
