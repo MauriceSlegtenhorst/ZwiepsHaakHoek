@@ -7302,7 +7302,26 @@ body > #app > .initial-loading-screen {
   flex-direction: column;
   gap: var(--size-lg);
 }
+body > #app > .initial-loading-screen > .info-message-container {
+  display: flex;
+  width: inherit;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: var(--size-s);
+}
+body > #app > .initial-loading-screen > .info-message-container > #crochet-ball-svg {
+  width: var(--size-x-lg);
+  height: var(--size-x-lg);
+}
 body > #app > .initial-loading-screen > #logo {
   width: 50vw;
   height: 50vh;
+}
+
+@media (max-width: 700px) {
+  body > #app > .initial-loading-screen .info-message-container {
+    flex-direction: column;
+    gap: var(--size-x-lg);
+  }
 }
