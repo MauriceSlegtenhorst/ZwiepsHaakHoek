@@ -42,5 +42,9 @@
   {
     "outputFile": "Shared/Components/PopupContainer.razor.css",
     "inputFile": "Shared/Components/PopupContainer.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Components/LoadingPageMessage.razor.css",
+    "inputFile": "Shared/Components/LoadingPageMessage.razor.scss"
   }
 ]

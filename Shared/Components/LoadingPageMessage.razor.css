@@ -1,0 +1,32 @@
+﻿:root {
+  --size-xx-s: 2px;
+  --size-x-s: 4px;
+  --size-s: 8px;
+  --size-md: 16px;
+  --size-lg: 32px;
+  --size-x-lg: 64px;
+  --size-xx-lg: 128px;
+  --size-phone: 700px;
+}
+
+.info-message-container {
+  display: flex;
+  width: inherit;
+  min-height: inherit;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: var(--size-s);
+  z-index: 100;
+}
+.info-message-container > .crochet-ball-svg {
+  width: var(--size-x-lg);
+  height: var(--size-x-lg);
+}
+
+@media (max-width: 700px) {
+  .info-message-container {
+    flex-direction: column;
+    gap: var(--size-x-lg);
+  }
+}

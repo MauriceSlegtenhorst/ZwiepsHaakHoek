@@ -11,8 +11,6 @@ namespace ZwiepsHaakHoek.Extensions.ServiceCollection
     {
         public static void AddServices(this IServiceCollection services, IConfiguration configuration, string baseAddress)
         {
-            // TODO maybe changing baseadres here wil help wioth github pages base url problem. Prob not
-            services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseAddress) });
             services.AddContentfulServices(configuration);
             services.AddSingleton<IPopupManager, PopupManager>();
             services.AddSingleton<IInterpreter, Interpreter>();
