@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Components;
 using ZwiepsHaakHoek.Models.Contentful;
 using ZwiepsHaakHoek.Services.Interpreter;
 using ZwiepsHaakHoek.Services.Localization;
-using ZwiepsHaakHoek.Shared.Components;
 
 namespace ZwiepsHaakHoek.Pages
 {

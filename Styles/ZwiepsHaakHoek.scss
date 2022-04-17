@@ -75,13 +75,45 @@ body {
             flex-direction: column;
             gap: var(--size-lg);
 
-            > #loading-text{
+            > .info-message-container {
+                display: flex;
+                width: inherit;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+                gap: var(--size-s);
 
+                > #loading-text {
+                }
+
+                > #crochet-ball-svg {
+                    width: var(--size-x-lg);
+                    height: var(--size-x-lg);
+                }
             }
 
             > #logo {
                 width: 50vw;
                 height: 50vh;
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($dimensions, 'phone')) {
+    body {
+        > #app {
+            > .initial-loading-screen {
+                .info-message-container {
+                    flex-direction: column;
+                    gap: var(--size-x-lg);
+
+                    > #loading-text {
+                    }
+
+                    > #crochet-ball-svg {
+                    }
+                }
             }
         }
     }

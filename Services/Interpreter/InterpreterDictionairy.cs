@@ -34,9 +34,15 @@
                     },
                     "LoadingPageContent" => language switch
                     {
-                        "nl" => NL_LOADING_PAGE_CONTENT,
-                        "de" => DE_LOADING_PAGE_CONTENT,
-                        _ => DE_LOADING_PAGE_CONTENT,
+                        "nl" => (formatParams is not null && formatParams.Length is 1)
+                        ? string.Format(NL_LOADING_PAGE_CONTENT, formatParams)
+                        : NL_LOADING_PAGE_CONTENT.Replace("{0} ", string.Empty),
+                        "de" => (formatParams is not null && formatParams.Length is 1)
+                        ? string.Format(NL_LOADING_PAGE_CONTENT, formatParams)
+                        : DE_LOADING_PAGE_CONTENT.Replace("{0} ", string.Empty),
+                        _ => (formatParams is not null && formatParams.Length is 1)
+                        ? string.Format(NL_LOADING_PAGE_CONTENT, formatParams)
+                        : NL_LOADING_PAGE_CONTENT.Replace("{0} ", string.Empty),
                     },
                     "Products" => language switch
                     {
@@ -73,8 +79,8 @@
         private const string NL_HOME = "Home";
         private const string DE_HOME = "Home";
 
-        private const string NL_LOADING_PAGE_CONTENT = "Bezig met laden van de pagina...";
-        private const string DE_LOADING_PAGE_CONTENT = "Die Seite wird geladen...";
+        private const string NL_LOADING_PAGE_CONTENT = "Bezig met laden van de {0} pagina...";
+        private const string DE_LOADING_PAGE_CONTENT = "Die {0} Seite wird geladen...";
 
         private const string NL_PRODUCTS = "Producten";
         private const string DE_PRODUCTS = "Produkte";
