@@ -1,10 +1,13 @@
 ﻿@page "/"
+@inherits ABasePage
+@implements IBasePage
+
 @using ZwiepsHaakHoek.Models.Contentful
 @using System.Linq
 
 <PageTitle>Zieps Haak Hoek - @Interpreter["Home"]</PageTitle>
 
-@if(false)@*(CFIndex is not null)*@
+@if(CFIndex is not null)
 {
     <Carousel 
         Images="() => CFIndex.Images.Select<Asset, Image>(x => new Image{ Url = x.File.Url, Alt = x.Description }).ToArray()"
@@ -35,5 +38,5 @@
 }
 else
 {
-    <LoadingPageMessage Page="@Interpreter["Home"]"/>
+    <LoadingPageMessage PageName="@Interpreter["Home"]"/>
 }

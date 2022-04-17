@@ -1,28 +1,12 @@
-﻿using Contentful.Core;
-using Contentful.Core.Errors;
+﻿using Contentful.Core.Errors;
 using Contentful.Core.Models;
 using Contentful.Core.Search;
-using Microsoft.AspNetCore.Components;
 using ZwiepsHaakHoek.Models.Contentful;
-using ZwiepsHaakHoek.Services.Interpreter;
-using ZwiepsHaakHoek.Services.Localization;
 
 namespace ZwiepsHaakHoek.Pages
 {
-    public partial class Index : IDisposable
+    public partial class Index : ABasePage, IBasePage
     {
-        [Inject]
-        public IContentfulClient ContentfulClient { get; set; }
-
-        [Inject] 
-        public HtmlRenderer HtmlRenderer { get; set; }
-
-        [Inject]
-        public ILocalization Localization { get; set; }
-
-        [Inject]
-        public IInterpreter Interpreter { get; set; }
-
         public CFIndex CFIndex { get; set; }
 
         public string IntroHTML { get; set; }

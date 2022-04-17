@@ -9,6 +9,6 @@ namespace ZwiepsHaakHoek.Shared.Components
         public IInterpreter Interpreter { get; set; }
 
         [Parameter, EditorRequired]
-        public string Page { get; set; }
+        public string PageName { get; set; }
     }
 }

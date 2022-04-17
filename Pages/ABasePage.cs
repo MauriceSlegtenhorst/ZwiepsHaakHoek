@@ -6,14 +6,18 @@ using ZwiepsHaakHoek.Services.Localization;
 
 namespace ZwiepsHaakHoek.Pages
 {
-    public interface IBasePage : IComponent, IDisposable//, IHandleEvent, IHandleAfterRender
+    public abstract class ABasePage : ComponentBase
     {
+        [Inject]
         public IContentfulClient ContentfulClient { get; set; }
 
+        [Inject]
         public HtmlRenderer HtmlRenderer { get; set; }
 
+        [Inject]
         public ILocalization Localization { get; set; }
 
+        [Inject]
         public IInterpreter Interpreter { get; set; }
     }
 }
