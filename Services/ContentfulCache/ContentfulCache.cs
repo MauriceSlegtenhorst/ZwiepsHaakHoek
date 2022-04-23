@@ -51,17 +51,12 @@ namespace ZwiepsHaakHoek.Services.ContentfulCache
 
             if (dtoContent is null || !dtoContent.IsValid(MAX_CACHE_AGE_IN_HOURS, _systemClock))
             {
-                Console.WriteLine("DTO was invalid. Fetching data from CMS.");
                 TContentfulModel cmsContent = await GetCMSContentAsync<TContentfulModel>(queryBuilder, filter);
 
                 dtoContent = await CacheDTO<TContentModel>.Create<TContentfulModel>(cmsContent, mapFunc, _systemClock);
 
                 // Fire and forget the saving to cache
                 _ = SaveDTOToCacheAsync<TContentModel>(dtoContent);
-            }
-            else
-            {
-                Console.WriteLine("DTO was valid. Using data from cache.");
             }
 
             return dtoContent.ContentModel;
