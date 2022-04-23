@@ -1,7 +1,7 @@
 ﻿using Contentful.Core.Models;
 using Contentful.Core.Models.Management;
 
-namespace ZwiepsHaakHoek.Models
+namespace ZwiepsHaakHoek.Models.Contentful
 {
     public class Culture
     {

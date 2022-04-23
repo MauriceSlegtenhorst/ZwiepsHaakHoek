@@ -1,6 +1,6 @@
 ﻿using Contentful.Core;
 using Microsoft.AspNetCore.Components;
-using ZwiepsHaakHoek.Models;
+using ZwiepsHaakHoek.Models.Contentful;
 using ZwiepsHaakHoek.Services.Localization;
 
 namespace ZwiepsHaakHoek.Shared.Components

@@ -3,10 +3,8 @@ using Newtonsoft.Json;
 
 namespace ZwiepsHaakHoek.Models.Contentful
 {
-    public class CFIndex
+    public class CFIndex : ContentType
     {
-        public SystemProperties Sys { get; set; }
-
         public Asset[] Images { get; set; }
 
         [JsonProperty("intro")]

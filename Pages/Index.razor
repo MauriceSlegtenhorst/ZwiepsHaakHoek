@@ -7,29 +7,29 @@
 
 <PageTitle>Zieps Haak Hoek - @Interpreter["Home"]</PageTitle>
 
-@if(CFIndex is not null)
+@if(IndexData is not null)
 {
     <Carousel 
-        Images="() => CFIndex.Images.Select<Asset, Image>(x => new Image{ Url = x.File.Url, Alt = x.Description }).ToArray()"
+        Images="() => IndexData.Images"
         MaxPixelHeight="500" Interval="5000"
     />
 
     <div class="intro">
-        @((MarkupString)IntroHTML)
+        @((MarkupString)IndexData.IntroMarkup)
     </div>
 
-    if(CFIndex.LatestProduct is not null)
+    if(IndexData.LatestProduct is not null)
     {
         <div class="latest-product-container">
             <div class="latest-product">
-                <Polaroid Image="() => new Image{ Url = CFIndex.LatestProduct.Images[0].File.Url, Alt = CFIndex.LatestProduct.Images[0].Description }">
+                <Polaroid Image="() => IndexData.LatestProduct.Images[0]">
                     <Footer>
-                        <h6>@CFIndex.LatestProduct.Title</h6>
+                        <h6>@IndexData.LatestProduct.Title</h6>
 
-                        @((MarkupString)Interpreter["Price", CFIndex.LatestProduct.Price.ToString()])
+                        @((MarkupString)Interpreter["Price", IndexData.LatestProduct.Price.ToString()])
                         <br/>
                         <br/>
-                        @CFIndex.LatestProduct.Description
+                        @IndexData.LatestProduct.Description
                     </Footer>
                 </Polaroid>
             </div>
