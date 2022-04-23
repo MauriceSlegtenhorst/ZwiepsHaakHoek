@@ -1,5 +1,5 @@
 ﻿using Contentful.Core.Models.Management;
-using ZwiepsHaakHoek.Models;
+using ZwiepsHaakHoek.Models.Contentful;
 
 namespace ZwiepsHaakHoek.Services.Localization
 {

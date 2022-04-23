@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace ZwiepsHaakHoek.Models.Contentful
 {
-    public class CFLanguageIcon
+    public class CFLanguageIcon : ContentType
     {
         public string LanguageCode { get; set; }
         [JsonProperty("flag")]

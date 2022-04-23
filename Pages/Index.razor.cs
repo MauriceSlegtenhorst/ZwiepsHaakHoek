@@ -1,15 +1,12 @@
 ﻿using Contentful.Core.Errors;
-using Contentful.Core.Models;
-using Contentful.Core.Search;
+using ZwiepsHaakHoek.Models;
 using ZwiepsHaakHoek.Models.Contentful;
 
 namespace ZwiepsHaakHoek.Pages
 {
     public partial class Index : ABasePage, IBasePage
     {
-        public CFIndex CFIndex { get; set; }
-
-        public string IntroHTML { get; set; }
+        public IndexModel IndexData { get; set; }
 
         public void Dispose()
         {
@@ -20,7 +17,7 @@ namespace ZwiepsHaakHoek.Pages
 
         public async void OnLanguageChanged(object sender, EventArgs args)
         {
-            CFIndex = null;
+            IndexData = null;
 
             await GetPageData();
 
@@ -36,14 +33,23 @@ namespace ZwiepsHaakHoek.Pages
         }
 
         private async Task GetPageData()
-        {
-            // Contenful: Including referenced content is only supported for the methods that return collections. Using GetEntry will not resolve your references. Meaning we have to configure QueryBuilder
-            // with Limit(1)
-            QueryBuilder<CFIndex> queryBuilder = QueryBuilder<CFIndex>.New.ContentTypeIs("home").LocaleIs(Localization.SelectedCulture.Locale.Code).Limit(1);
-            
+        {          
             try
             {
-                CFIndex = (await ContentfulClient.GetEntries<CFIndex>(queryBuilder)).First();
+                IndexData = await ContentfulCache.GetContentAsync<IndexModel, CFIndex>(async (contentfulModel) => new IndexModel 
+                {
+                    Images = contentfulModel.Images.Select((asset) => new Image { Alt = asset.Title, Url = asset.File.Url}).ToArray(),
+                    IntroMarkup = await HtmlRenderer.ToHtml(contentfulModel.IntroMarkup),
+                    LatestProduct = new Product 
+                    {
+                        Images = contentfulModel.LatestProduct.Images.Select((asset) => new Image { Alt = asset.Title, Url = asset.File.Url }).ToArray(),
+                        Title = contentfulModel.LatestProduct.Title,
+                        ShortDescription = contentfulModel.LatestProduct.ShortDescription,
+                        Description = contentfulModel.LatestProduct.Description,
+                        DiscountPrice = contentfulModel.LatestProduct.DiscountPrice,
+                        Price = contentfulModel.LatestProduct.Price,
+                    },
+                });
             }
             catch (ContentfulException ex)
             {
@@ -60,8 +66,6 @@ namespace ZwiepsHaakHoek.Pages
                 // TODO show error or something
                 throw new NotImplementedException("TODO is not yet done", ex);
             }
-            
-            IntroHTML = await HtmlRenderer.ToHtml(CFIndex.IntroMarkup);
         }
     }
 }

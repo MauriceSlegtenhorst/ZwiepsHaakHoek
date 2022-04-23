@@ -116,9 +116,12 @@ namespace ZwiepsHaakHoek.Utilities
             if (IsReadOnly || Classes.Length == 0)
                 return false;
 
-            var newClasses = new string[Classes.Length - 1];
-            bool isRemoved = false;
+            if(!Classes.Contains(item))
+                return false;
 
+            var newClasses = new string[Classes.Length - 1];
+
+            bool isRemoved = false;
             for (int i = 0; i < Classes.Length; i++)
             {
                 if (Classes[i] == item)
@@ -127,12 +130,11 @@ namespace ZwiepsHaakHoek.Utilities
                 }
                 else
                 {
-                    newClasses[i] = Classes[isRemoved ? i-1 : i];
+                    newClasses[isRemoved ? i -1 : i] = Classes[i];
                 }
             }
 
-            Classes = newClasses;
-            return isRemoved;
+            return true;
         }
 
         public IEnumerator<string> GetEnumerator()

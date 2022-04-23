@@ -4,7 +4,6 @@ using Contentful.Core.Models.Management;
 using Contentful.Core.Search;
 using System.Globalization;
 using ZwiepsHaakHoek.Contentful;
-using ZwiepsHaakHoek.Models;
 using ZwiepsHaakHoek.Models.Contentful;
 using ZwiepsHaakHoek.Services.Browser;
 using ZwiepsHaakHoek.Services.LocalStorage;
@@ -91,7 +90,7 @@ namespace ZwiepsHaakHoek.Services.Localization
             try
             {
                 locales = (await _contentfulClient.GetLocales()).ToArray();
-                QueryBuilder<CFLanguageIcon> builder = QueryBuilder<CFLanguageIcon>.New.ContentTypeIs(ContentfulContentTypes.LANGUAGE_ICON);
+                QueryBuilder<CFLanguageIcon> builder = QueryBuilder<CFLanguageIcon>.New.ContentTypeIs(ContentfulContentTypes.GetContentTypeName<CFLanguageIcon>());
                 cFLanguageIcons = (await _contentfulClient.GetEntries<CFLanguageIcon>(builder)).ToArray();
             }
             catch (ContentfulException ex)

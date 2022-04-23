@@ -11,6 +11,7 @@
     <PackageReference Include="contentful.csharp" Version="7.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.6.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -18,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Carousel\" />
     <Folder Include="Styles\FontAwesome\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\font-awesome\" />
