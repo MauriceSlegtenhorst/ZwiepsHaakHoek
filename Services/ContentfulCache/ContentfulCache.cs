@@ -27,31 +27,33 @@ namespace ZwiepsHaakHoek.Services.ContentfulCache
         }
 
         public async Task<TContentModel> GetContentAsync<TContentModel, TContentfulModel>(
-            Func<TContentfulModel, Task<TContentModel>> mapFunc) where TContentfulModel : ContentType
+            Func<TContentfulModel, Task<TContentModel>> mapFunc, 
+            bool forceCMSFetch) where TContentfulModel : ContentType
         {
             QueryBuilder<TContentfulModel> queryBuilder = QueryBuilder<TContentfulModel>.New.ContentTypeIs(ContentfulContentTypes.GetContentTypeName<TContentfulModel>()).LocaleIs(_localization.SelectedCulture.Locale.Code).Limit(1);
-            return await GetContentAsync<TContentModel, TContentfulModel>(mapFunc, queryBuilder);
+            return await GetContentAsync<TContentModel, TContentfulModel>(mapFunc, queryBuilder, forceCMSFetch);
         }
 
         public async Task<TContentModel> GetContentAsync<TContentModel, TContentfulModel>(
             Func<TContentfulModel, Task<TContentModel>> mapFunc,
-            QueryBuilder<TContentfulModel> queryBuilder) 
+            QueryBuilder<TContentfulModel> queryBuilder,
+            bool forceCMSFetch) 
             where TContentfulModel : ContentType
         {
-            return await GetContentAsync<TContentModel, TContentfulModel>(mapFunc, queryBuilder, (ContentfulCollection) => ContentfulCollection.FirstOrDefault());
+            return await GetContentAsync<TContentModel, TContentfulModel>(mapFunc, queryBuilder, (ContentfulCollection) => ContentfulCollection.FirstOrDefault(), forceCMSFetch);
         }
 
         public async Task<TContentModel> GetContentAsync<TContentModel, TContentfulModel>(
             Func<TContentfulModel, Task<TContentModel>> mapFunc,
             QueryBuilder<TContentfulModel> queryBuilder, 
-            Func<ContentfulCollection<TContentfulModel>, TContentfulModel> filter) 
+            Func<ContentfulCollection<TContentfulModel>, TContentfulModel> filter,
+            bool forceCMSFetch) 
             where TContentfulModel : ContentType
         {
             CacheDTO<TContentModel>? dtoContent = await GetDTOContentFromCacheAsync<TContentModel>();
 
-            if (dtoContent is null || !dtoContent.IsValid(MAX_CACHE_AGE_IN_HOURS, _systemClock))
+            if (dtoContent is null || !dtoContent.IsValid(MAX_CACHE_AGE_IN_HOURS, _systemClock) || forceCMSFetch)
             {
-                Console.WriteLine("DTO was invalid. Fetching data from CMS.");
                 TContentfulModel cmsContent = await GetCMSContentAsync<TContentfulModel>(queryBuilder, filter);
 
                 dtoContent = await CacheDTO<TContentModel>.Create<TContentfulModel>(cmsContent, mapFunc, _systemClock);
@@ -59,22 +61,19 @@ namespace ZwiepsHaakHoek.Services.ContentfulCache
                 // Fire and forget the saving to cache
                 _ = SaveDTOToCacheAsync<TContentModel>(dtoContent);
             }
-            else
-            {
-                Console.WriteLine("DTO was valid. Using data from cache.");
-            }
 
             return dtoContent.ContentModel;
         }
 
         public async Task<TContentModel> GetContentAsync<TContentModel, TContentfulModel>(
             Func<TContentfulModel, Task<TContentModel>> mapFunc,
-            Func<IContentfulClient, Task<TContentfulModel>> cmsContentFunc) 
+            Func<IContentfulClient, Task<TContentfulModel>> cmsContentFunc,
+            bool forceCMSFetch) 
             where TContentfulModel : ContentType
         {
             CacheDTO<TContentModel>? dtoContent = await GetDTOContentFromCacheAsync<TContentModel>();
 
-            if (dtoContent is null || !dtoContent.IsValid(MAX_CACHE_AGE_IN_HOURS, _systemClock))
+            if (dtoContent is null || !dtoContent.IsValid(MAX_CACHE_AGE_IN_HOURS, _systemClock) || forceCMSFetch)
             {
                 TContentfulModel cmsContent = await GetCMSContentAsync<TContentfulModel>(cmsContentFunc);
 

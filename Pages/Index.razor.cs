@@ -19,7 +19,7 @@ namespace ZwiepsHaakHoek.Pages
         {
             IndexData = null;
 
-            await GetPageData();
+            await GetPageData(forceCMSFetch: true);
 
             StateHasChanged();
         }
@@ -32,7 +32,7 @@ namespace ZwiepsHaakHoek.Pages
             Localization.LanguageChanged += OnLanguageChanged;
         }
 
-        private async Task GetPageData()
+        private async Task GetPageData(bool forceCMSFetch = false)
         {          
             try
             {
@@ -48,8 +48,9 @@ namespace ZwiepsHaakHoek.Pages
                         Description = contentfulModel.LatestProduct.Description,
                         DiscountPrice = contentfulModel.LatestProduct.DiscountPrice,
                         Price = contentfulModel.LatestProduct.Price,
-                    },
-                });
+                    }
+                }, 
+                forceCMSFetch);
             }
             catch (ContentfulException ex)
             {
