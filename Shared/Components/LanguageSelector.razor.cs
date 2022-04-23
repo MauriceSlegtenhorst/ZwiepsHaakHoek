@@ -1,5 +1,4 @@
-﻿using Contentful.Core;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using ZwiepsHaakHoek.Models.Contentful;
 using ZwiepsHaakHoek.Services.Localization;
 
@@ -9,15 +8,6 @@ namespace ZwiepsHaakHoek.Shared.Components
     {
         [Inject]
         public ILocalization Localization { get; set; }
-
-        [Inject]
-        public IContentfulClient ContentfulClient { get; set; }
-
-        protected override async Task OnInitializedAsync()
-        {
-            
-            await base.OnInitializedAsync();
-        }
 
         public async Task SetLanguage(string cultureName)
         {
