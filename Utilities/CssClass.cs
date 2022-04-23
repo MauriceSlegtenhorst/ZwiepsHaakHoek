@@ -121,16 +121,19 @@ namespace ZwiepsHaakHoek.Utilities
 
             var newClasses = new string[Classes.Length - 1];
 
-            bool isRemoved = false;
-            for (int i = 0; i < Classes.Length; i++)
+            if(newClasses.Length > 0)
             {
-                if (Classes[i] == item)
+                bool isRemoved = false;
+                for (int i = 0; i < Classes.Length; i++)
                 {
-                    isRemoved = true;
-                }
-                else
-                {
-                    newClasses[isRemoved ? i -1 : i] = Classes[i];
+                    if (Classes[i] == item)
+                    {
+                        isRemoved = true;
+                    }
+                    else
+                    {
+                        newClasses[isRemoved ? i - 1 : i] = Classes[i];
+                    }
                 }
             }
 

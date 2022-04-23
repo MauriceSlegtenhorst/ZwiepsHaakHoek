@@ -7152,6 +7152,7 @@ readers do not read off random characters that represent icons */
   --size-x-lg: 64px;
   --size-xx-lg: 128px;
   --size-phone: 700px;
+  --size-tablet: 1000px;
 }
 
 .fade {
@@ -7279,11 +7280,17 @@ body h6 {
   font-size: 1em;
 }
 body a {
+  -webkit-text-decoration: none;
   text-decoration: none;
-  color: var(--color-primary-light);
+  color: var(--color-primary);
 }
 body a:hover {
-  color: var(--color-primary-light-2x);
+  color: var(--color-primary-light);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
 }
 body circle, body path {
   stroke: var(--color-primary);
@@ -7297,16 +7304,24 @@ body > #app > .initial-loading-screen {
   width: inherit;
   min-height: inherit;
   display: flex;
+  -webkit-justify-content: center;
   justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
   flex-direction: column;
   gap: var(--size-lg);
 }
 body > #app > .initial-loading-screen > .info-message-container {
   display: flex;
   width: inherit;
+  -webkit-justify-content: center;
   justify-content: center;
+  -ms-align-content: center;
+  -webkit-align-content: center;
   align-content: center;
+  -webkit-align-items: center;
   align-items: center;
   gap: var(--size-s);
 }
@@ -7321,6 +7336,8 @@ body > #app > .initial-loading-screen > #logo {
 
 @media (max-width: 700px) {
   body > #app > .initial-loading-screen .info-message-container {
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     flex-direction: column;
     gap: var(--size-x-lg);
   }

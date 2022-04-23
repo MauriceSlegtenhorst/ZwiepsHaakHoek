@@ -1,4 +1,5 @@
 ﻿@import "../../Styles/_Dimensions.scss";
+@import "../../Styles/_VendorPrefixes.scss";
 
 .carousel-container {
     position: relative;
@@ -10,8 +11,8 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        object-fit: cover;
-        object-position: center;
+        @include object-fit(cover);
+        @include object-position(center);
         height: inherit;
         max-width: 100%;
     }
@@ -22,8 +23,8 @@
         font-size: var(--size-x-lg);
         padding: var(--size-md);
         cursor: pointer;
-        transition: 0.6s ease;
-        user-select: none;
+        @include transition(0.6s ease);
+        @include user-select(none);
         color: var(--color-gray);
 
         &:hover {
@@ -34,12 +35,12 @@
 
     > .move-next {
         right: 0;
-        border-radius: 3px 0 0 3px;
+        @include border-radius(3px 0 0 3px);
     }
 
     > .move-previous {
         left: 0;
-        border-radius: 0 3px 3px 0;
+        @include border-radius(0 3px 3px 0);
     }
 
     > .circle-container {
@@ -50,15 +51,15 @@
         left: calc(50% - $CONTAINER_WIDTH / 2);
         padding: var(--size-md) 0 var(--size-md) 0;
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
+        @include justify-content(space-evenly);
+        @include align-items(center);
+        @include flex-wrap(wrap);
 
         > .fa-circle {
             color: var(--color-gray);
             font-size: var(--size-sm);
             cursor: pointer;
-            transition: color 0.6s ease;
+            @include transition(color 0.6s ease);
 
             &:hover {
                 color: var(--color-gray-dark);

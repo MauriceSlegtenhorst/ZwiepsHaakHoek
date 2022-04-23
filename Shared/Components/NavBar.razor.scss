@@ -1,4 +1,5 @@
 ﻿@import "../../Styles/_Dimensions.scss";
+@import "../../Styles/_VendorPrefixes.scss";
 
 .navbar-container {
     z-index: 1;
@@ -6,25 +7,67 @@
     width: 100%;
     min-height: var(--size-xx-lg);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-content(center);
+    @include align-items(center);
     background-color: transparent;
 
     > .logo {
-        padding: var(--size-lg);
-        font-size: x-large;
+        padding: var(--size-md);
+        width: var(--size-xx-lg);
+        height: var(--size-xx-lg);
+
+        > svg {
+            width: inherit;
+            height: inherit;
+        }
     }
 
-    > .links {
+    > .links-container {
         display: flex;
-        flex-direction: row;
+        @include flex-direction(row);
         gap: var(--size-x-lg);
-        text-shadow: 0.02em 0 var(--color-primary-dark), 0 0.02em var(--color-primary-dark);
+        text-shadow: 0.02em 0 var(--color-black), 0 0.02em var(--color-black);
 
-        > a:first-child {
-            display: none;
+        > a {
+            $COLOR_BEFORE_AFTER: var(--color-primary);
+            $COLOR_BEFORE_AFTER_DARK: var(--color-primary-dark);
+            position: relative;
+            padding: var(--size-s);
+            white-space: nowrap;
+
+            &:first-child {
+                display: none;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                height: var(--size-md);
+                width: var(--size-md);
+                position: absolute;
+                @include transition(all .35s ease);
+                opacity: 0;
+            }
+
+            &::before {
+                content: '';
+                right: 0;
+                top: 0;
+                border-top: 3px solid $COLOR_BEFORE_AFTER;
+                border-right: 3px solid $COLOR_BEFORE_AFTER_DARK;
+                @include transform(translate(-100%, 50%));
+            }
+
+            &::after {
+                content: '';
+                left: 0;
+                bottom: 0;
+                border-bottom: 3px solid $COLOR_BEFORE_AFTER_DARK;
+                border-left: 3px solid $COLOR_BEFORE_AFTER;
+                @include transform(translate(100%, -50%));
+            }
         }
     }
 
@@ -39,24 +82,69 @@
         padding: var(--size-lg);
         font-size: xx-large;
         color: var(--color-primary);
+    }
+}
 
-        &:hover {
-            cursor: pointer;
+@media(hover: hover) and (pointer: fine) {
+    .navbar-container {
+        > .logo {
+
+            > svg {
+            }
+        }
+
+        > .links-container {
+
+            > a {
+                &:hover {
+                    color: var(--color-primary);
+
+                    &::before,
+                    &::after {
+                        @include transform(translate(0,0));
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        > .language-selector-container {
+        }
+
+        > .hamburger {
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }
 
-@media (max-width: map-get($dimensions, 'phone')) {
+@media only screen and (max-width: map-get($dimensions, 'tablet')) {
     .navbar-container {
-        justify-content: flex-end;
+
+        > .logo {
+        }
+
+        > .links-container {
+            gap: var(--size-lg);
+        }
+
+        > .language-selector-container {
+        }
+    }
+}
+
+@media only screen and (max-width: map-get($dimensions, 'phone')) {
+    .navbar-container {
+        @include justify-content(flex-end);
 
         > .logo {
             display: none;
         }
 
-        > .links {
+        > .links-container {
             display: none;
-            flex-direction: column;
+            @include flex-direction(column);
         }
 
         > .language-selector-container {
@@ -70,20 +158,20 @@
         }
 
         &.expanded {
-            justify-content: space-between;
+            @include justify-content(space-between);
             height: 100%;
             background-color: var(--color-black-light-2x);
 
-            > .links {
+            > .links-container {
                 position: absolute;
                 left: 0;
                 top: 0;
                 width: 100%;
                 height: 100vh;
                 display: flex;
-                align-content: center;
-                justify-content: center;
-                align-items: center;
+                @include align-content(center);
+                @include justify-content(center);
+                @include align-items(center);
                 gap: var(--size-lg);
 
                 > a:first-child {

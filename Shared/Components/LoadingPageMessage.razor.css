@@ -7,14 +7,19 @@
   --size-x-lg: 64px;
   --size-xx-lg: 128px;
   --size-phone: 700px;
+  --size-tablet: 1000px;
 }
 
 .info-message-container {
   display: flex;
   width: inherit;
   min-height: inherit;
+  -webkit-justify-content: center;
   justify-content: center;
+  -ms-align-content: center;
+  -webkit-align-content: center;
   align-content: center;
+  -webkit-align-items: center;
   align-items: center;
   gap: var(--size-s);
   z-index: 100;
@@ -26,6 +31,8 @@
 
 @media (max-width: 700px) {
   .info-message-container {
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     flex-direction: column;
     gap: var(--size-x-lg);
   }

@@ -1,9 +1,4 @@
-﻿.intro {
-  margin: var(--size-xx-lg) var(--size-lg) var(--size-xx-lg) var(--size-lg);
-  padding: 0 var(--size-md) 0 var(--size-md);
-}
-
-:root {
+﻿:root {
   --size-xx-s: 2px;
   --size-x-s: 4px;
   --size-s: 8px;
@@ -12,10 +7,17 @@
   --size-x-lg: 64px;
   --size-xx-lg: 128px;
   --size-phone: 700px;
+  --size-tablet: 1000px;
+}
+
+.intro {
+  margin: var(--size-xx-lg) var(--size-lg) var(--size-xx-lg) var(--size-lg);
+  padding: 0 var(--size-md) 0 var(--size-md);
 }
 
 .latest-product-container {
   display: flex;
+  -webkit-justify-content: center;
   justify-content: center;
   width: 100%;
   padding-bottom: var(--size-xx-lg);

@@ -1,16 +1,18 @@
-﻿.intro {
+﻿@import "../Styles/_Dimensions.scss";
+@import "../Styles/_VendorPrefixes.scss";
+
+.intro {
     margin: var(--size-xx-lg) var(--size-lg) var(--size-xx-lg) var(--size-lg);
     padding: 0 var(--size-md) 0 var(--size-md);
 }
-@import "../Styles/_Dimensions.scss";
 
 .latest-product-container {
     display: flex;
-    justify-content: center;
+    @include justify-content(center);
     width: 100%;
     padding-bottom: var(--size-xx-lg);
 
-    > .latest-product{
+    > .latest-product {
         width: 33%;
     }
 

@@ -7,6 +7,7 @@
   --size-x-lg: 64px;
   --size-xx-lg: 128px;
   --size-phone: 700px;
+  --size-tablet: 1000px;
 }
 
 .carousel-container {
@@ -19,7 +20,9 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: center;
   object-position: center;
   height: inherit;
   max-width: 100%;
@@ -30,7 +33,13 @@
   font-size: var(--size-x-lg);
   padding: var(--size-md);
   cursor: pointer;
+  -moz-transition: 0.6s ease;
+  -o-transition: 0.6s ease;
+  -webkit-transition: 0.6s ease;
   transition: 0.6s ease;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
   user-select: none;
   color: var(--color-gray);
 }
@@ -40,10 +49,14 @@
 }
 .carousel-container > .move-next {
   right: 0;
+  -moz-border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
 .carousel-container > .move-previous {
   left: 0;
+  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
 .carousel-container > .circle-container {
@@ -53,14 +66,21 @@
   left: 37.5%;
   padding: var(--size-md) 0 var(--size-md) 0;
   display: flex;
+  -webkit-justify-content: space-evenly;
   justify-content: space-evenly;
+  -webkit-align-items: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .carousel-container > .circle-container > .fa-circle {
   color: var(--color-gray);
   font-size: var(--size-sm);
   cursor: pointer;
+  -moz-transition: color 0.6s ease;
+  -o-transition: color 0.6s ease;
+  -webkit-transition: color 0.6s ease;
   transition: color 0.6s ease;
 }
 .carousel-container > .circle-container > .fa-circle:hover {
