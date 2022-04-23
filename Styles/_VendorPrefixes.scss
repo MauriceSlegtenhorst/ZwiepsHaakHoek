@@ -1,0 +1,94 @@
+﻿@mixin justify-content($param_1) {
+    -webkit-justify-content: $param_1;
+    justify-content: $param_1;
+}
+
+@mixin align-content($param_1) {
+    -ms-align-content: $param_1;
+    -webkit-align-content: $param_1;
+    align-content: $param_1;
+}
+
+@mixin align-items($param_1) {
+    -webkit-align-items: $param_1;
+    align-items: $param_1;
+}
+
+@mixin flex-direction($param_1) {
+    -ms-flex-direction: $param_1;
+    -webkit-flex-direction: $param_1;
+    flex-direction: $param_1;
+}
+
+@mixin flex($param_1) {
+    -ms-flex: $param_1;
+    -webkit-flex: $param_1;
+    flex: $param_1;
+}
+
+@mixin flex-wrap($param_1) {
+    -ms-flex-wrap: $param_1;
+    -webkit-flex-wrap: $param_1;
+    flex-wrap: $param_1;
+}
+
+@mixin transition($param_1) {
+    -moz-transition: $param_1;
+    -o-transition: $param_1;
+    -webkit-transition: $param_1;
+    transition: $param_1;
+}
+
+@mixin transform($param_1) {
+    -moz-transform: $param_1;
+    -ms-transform: $param_1;
+    -o-transform: $param_1;
+    -webkit-transform: $param_1;
+    transform: $param_1;
+}
+
+@mixin transform-origin($param_1) {
+    -moz-transform-origin: $param_1;
+    -ms-transform-origin: $param_1;
+    -o-transform-origin: $param_1;
+    -webkit-transform-origin: $param_1;
+    transform-origin: $param_1;
+}
+
+@mixin transform-style($param_1) {
+    -webkit-transform-style: $param_1;
+    transform-style: $param_1;
+}
+
+@mixin object-fit($param_1) {
+    -o-object-fit: $param_1;
+    object-fit: $param_1;
+}
+
+@mixin object-position($param_1) {
+    -o-object-position: $param_1;
+    object-position: $param_1;
+}
+
+@mixin backdrop-filter($param_1) {
+    -webkit-backdrop-filter: $param_1;
+    backdrop-filter: $param_1;
+}
+
+@mixin user-select($param_1) {
+    -moz-user-select: $param_1;
+    -ms-user-select: $param_1;
+    -webkit-user-select: $param_1;
+    user-select: $param_1;
+}
+
+@mixin border-radius($param_1) {
+    -moz-border-radius: $param_1;
+    -webkit-border-radius: $param_1;
+    border-radius: $param_1;
+}
+
+@mixin text-decoration($param_1) {
+    -webkit-text-decoration: $param_1;
+    text-decoration: $param_1;
+}

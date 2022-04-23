@@ -46,5 +46,9 @@
   {
     "outputFile": "Shared/Components/LoadingPageMessage.razor.css",
     "inputFile": "Shared/Components/LoadingPageMessage.razor.scss"
+  },
+  {
+    "outputFile": "Shared/Components/UnderConstruction.razor.css",
+    "inputFile": "Shared/Components/UnderConstruction.razor.scss"
   }
 ]

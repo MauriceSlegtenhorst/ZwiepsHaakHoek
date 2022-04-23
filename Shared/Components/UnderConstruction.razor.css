@@ -1,0 +1,13 @@
+﻿.under-construction-container {
+  width: inherit;
+  height: inherit;
+  min-height: inherit;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-align-content: center;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-align-items: centter;
+  align-items: centter;
+}
