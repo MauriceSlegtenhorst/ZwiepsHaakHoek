@@ -56,6 +56,9 @@
         @include flex-wrap(wrap);
 
         > .fa-circle {
+            width: unset;
+            height: unset;
+            padding: unset;
             color: var(--color-gray);
             font-size: var(--size-sm);
             cursor: pointer;

@@ -11,7 +11,7 @@
 }
 
 .navbar-container {
-  z-index: 1;
+  z-index: 100;
   position: absolute;
   width: 100%;
   min-height: var(--size-xx-lg);
@@ -172,6 +172,6 @@
     display: block;
   }
   .navbar-container.expanded > .hamburger {
-    z-index: 1;
+    z-index: 100;
   }
 }

@@ -15,5 +15,7 @@ namespace ZwiepsHaakHoek.Pages
         public ILocalization Localization { get; set; }
 
         public IInterpreter Interpreter { get; set; }
+
+        public Task GetPageData(bool forceCMSFetch = false);
     }
 }

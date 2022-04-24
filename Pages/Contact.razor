@@ -1,3 +1,6 @@
 ﻿@page "/contact"
 
-<UnderConstruction/>
+@inherits ABasePage
+@implements IBasePage
+
+<UnderConstruction Name="@(Interpreter["Contact"] + " " + Interpreter["Page"].ToLower())"/>

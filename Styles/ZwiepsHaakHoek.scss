@@ -1,5 +1,6 @@
 ﻿@import "FontAwesome/fontawesome.scss";
 @import "FontAwesome/solid.scss";
+@import "FontAwesome/brands.scss";
 @import "_Colors.scss";
 @import "_Dimensions.scss";
 @import "_VendorPrefixes.scss";
@@ -20,6 +21,14 @@ body {
     font-size: 1.2em;
     font-weight: 500;
     color: var(--color-white);
+
+    .fa-solid {
+        width: var(--size-lg);
+        height: var(--size-lg);
+        padding: var(--size-lg);
+        font-size: xx-large;
+        color: var(--color-primary);
+    }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--color-primary);

@@ -1,13 +1,117 @@
-﻿@import "../../Styles/_VendorPrefixes.scss";
+﻿@import "../../Styles/_Dimensions.scss";
+@import "../../Styles/_VendorPrefixes.scss";
 
 .under-construction-container {
+    position: relative;
     width: inherit;
     height: inherit;
     min-height: inherit;
     display: flex;
     @include justify-content(center);
     @include align-content(center);
-    @include align-items(centter);
+    @include align-items(center);
 
+    > .message-container {
+        position: relative;
+        background-color: var(--color-black-light-2x);
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+        padding: var(--size-xx-lg);
+        text-shadow: 0.02em 0 var(--color-black), 0 0.02em var(--color-black);
 
+        *:not(.background-image) {
+            z-index: 1;
+        }
+
+        > .head {
+            display: flex;
+            @include flex-direction(row);
+            @include justify-content(flex-start);
+            @include align-content(center);
+            @include align-items(center);
+            gap: var(--size-lg);
+
+            > .icon {
+                padding: unset;
+                width: max-content;
+                height: max-content;
+                font-size: var(--size-x-lg);
+            }
+
+            > .title {
+                margin: unset;
+            }
+        }
+
+        > .body {
+        }
+
+        > .background-image {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            @include object-fit(cover);
+            @include object-position(center);
+            @include filter(blur(0.3rem));
+            opacity: 0.8;
+        }
+    }
+}
+
+@media (max-width: map-get($dimensions, 'tablet')) {
+    .under-construction-container {
+
+        > .message-container {
+            padding: var(--size-x-lg);
+
+            *:not(.background-image) {
+            }
+
+            > .background-image {
+            }
+
+            > .head {
+
+                > .icon {
+                }
+
+                > .title {
+                }
+            }
+
+            > .body {
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($dimensions, 'phone')) {
+    .under-construction-container {
+
+        > .message-container {
+            padding: var(--size-lg);
+
+            *:not(.background-image) {
+            }
+
+            > .background-image {
+            }
+
+            > .head {
+                @include flex-direction(column);
+                @include justify-content(center);
+                gap: var(--size-x-lg);
+
+                > .icon {
+                }
+
+                > .title {
+                }
+            }
+
+            > .body {
+            }
+        }
+    }
 }

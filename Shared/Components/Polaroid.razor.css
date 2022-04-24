@@ -4,11 +4,6 @@
 }
 .polaroid-container > .expand-button {
   position: absolute;
-  width: var(--size-lg);
-  height: var(--size-lg);
-  padding: var(--size-lg);
-  font-size: xx-large;
-  color: var(--color-primary);
 }
 .polaroid-container > .expand-button:hover {
   cursor: pointer;
