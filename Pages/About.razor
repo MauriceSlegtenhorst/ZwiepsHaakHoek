@@ -1,3 +1,6 @@
 ﻿@page "/about"
 
-<UnderConstruction/>
+@inherits ABasePage
+@implements IBasePage
+
+<UnderConstruction Name="@(Interpreter["About"] + " " + Interpreter["Page"].ToLower())"/>

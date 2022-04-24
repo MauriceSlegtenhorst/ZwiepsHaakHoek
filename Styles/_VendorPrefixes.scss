@@ -75,6 +75,12 @@
     backdrop-filter: $param_1;
 }
 
+@mixin filter($param_1) {
+    -moz-filter: $param_1;
+    -webkit-filter: $param_1;
+    filter: $param_1;
+}
+
 @mixin user-select($param_1) {
     -moz-user-select: $param_1;
     -ms-user-select: $param_1;

@@ -1,3 +1,6 @@
 ﻿@page "/credits"
 
-<UnderConstruction/>
+@inherits ABasePage
+@implements IBasePage
+
+<UnderConstruction Name="@(Interpreter["Credits"] + " " + Interpreter["Page"].ToLower())"/>

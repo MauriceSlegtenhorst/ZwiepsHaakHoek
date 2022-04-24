@@ -32,7 +32,7 @@ namespace ZwiepsHaakHoek.Pages
             Localization.LanguageChanged += OnLanguageChanged;
         }
 
-        private async Task GetPageData(bool forceCMSFetch = false)
+        public async Task GetPageData(bool forceCMSFetch = false)
         {          
             try
             {

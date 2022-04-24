@@ -8,6 +8,12 @@
             {
                 return key switch
                 {
+                    "Page" => language switch
+                    {
+                        "nl" => NL_PAGE,
+                        "de" => DE_PAGE,
+                        _ => NL_PAGE,
+                    },
                     "About" => language switch
                     {
                         "nl" => NL_ABOUT,
@@ -62,10 +68,31 @@
                         ? string.Format("{0}: {1} {2}", formatParams.Prepend(NL_CurrencyLogo).Prepend(NL_PRICE).ToArray())
                         : NL_PRICE,
                     },
+                    "UnderConstructionTitle" => language switch
+                    {
+                        "nl" => (formatParams is not null && formatParams.Length is 1)
+                        ? string.Format(NL_UNDER_CONSRUCTION_TITLE, formatParams)
+                        : NL_UNDER_CONSRUCTION_TITLE,
+                        "de" => (formatParams is not null && formatParams.Length is 1)
+                        ? string.Format(DE_UNDER_CONSRUCTION_TITLE, formatParams)
+                        : DE_UNDER_CONSRUCTION_TITLE,
+                        _ => (formatParams is not null && formatParams.Length is 1)
+                        ? string.Format(NL_UNDER_CONSRUCTION_TITLE, formatParams)
+                        : NL_UNDER_CONSRUCTION_TITLE,
+                    },
+                    "WorkInProgress" => language switch
+                    {
+                        "nl" => NL_CROCHET_WORK_IN_PROGRESS,
+                        "de" => DE_CROCHET_WORK_IN_PROGRESS,
+                        _ => NL_CROCHET_WORK_IN_PROGRESS,
+                    },
                     _ => throw new KeyNotFoundException($"No translation found for key: \"{ key }\"."),
                 };
             }
         }
+
+        private const string NL_PAGE = "Pagina";
+        private const string DE_PAGE = "Seite";
 
         private const string NL_ABOUT = "Over mij";
         private const string DE_ABOUT = "Über mich";
@@ -90,5 +117,11 @@
 
         private const string NL_CurrencyLogo = "&#8364;";
         private const string DE_CurrencyLogo = "CHF";
+
+        private const string NL_UNDER_CONSRUCTION_TITLE = "{0} is nog onder constructie.";
+        private const string DE_UNDER_CONSRUCTION_TITLE = "{0} befindet sich noch im Bau.";
+
+        private const string NL_CROCHET_WORK_IN_PROGRESS = "Werk in uitvoering.";
+        private const string DE_CROCHET_WORK_IN_PROGRESS = "In Arbeit.";
     }
 }
