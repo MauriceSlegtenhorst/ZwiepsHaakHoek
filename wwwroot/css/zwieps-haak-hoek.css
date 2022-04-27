@@ -10316,7 +10316,7 @@ body > #app > .initial-loading-screen {
   -ms-flex-direction: column;
   -webkit-flex-direction: column;
   flex-direction: column;
-  gap: var(--size-lg);
+  gap: var(--size-x-lg);
 }
 body > #app > .initial-loading-screen > .info-message-container {
   display: flex;
@@ -10328,22 +10328,60 @@ body > #app > .initial-loading-screen > .info-message-container {
   align-content: center;
   -webkit-align-items: center;
   align-items: center;
-  gap: var(--size-s);
+  gap: var(--size-x-lg);
 }
 body > #app > .initial-loading-screen > .info-message-container > #crochet-ball-svg {
   width: var(--size-x-lg);
   height: var(--size-x-lg);
+}
+body > #app > .initial-loading-screen > .progress-bar {
+  position: relative;
+  height: var(--size-lg);
+  width: 25%;
+  border: solid var(--size-xx-s) var(--color-primary);
+  -moz-border-radius: var(--size-xx-s);
+  -webkit-border-radius: var(--size-xx-s);
+  border-radius: var(--size-xx-s);
+}
+body > #app > .initial-loading-screen > .progress-bar > #progress {
+  width: 0;
+  height: inherit;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 var(--size-lg) var(--color-primary);
+}
+body > #app > .initial-loading-screen > .progress-bar > #progress-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-align-content: center;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 body > #app > .initial-loading-screen > #logo {
   width: 50vw;
   height: 50vh;
 }
 
+@media (max-width: 1000px) {
+  body > #app > .initial-loading-screen .info-message-container {
+    gap: var(--size-lg);
+  }
+  body > #app > .initial-loading-screen > .progress-bar {
+    width: 50%;
+  }
+}
 @media (max-width: 700px) {
   body > #app > .initial-loading-screen .info-message-container {
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    gap: var(--size-x-lg);
+    gap: var(--size-md);
+  }
+  body > #app > .initial-loading-screen > .progress-bar {
+    width: 75%;
   }
 }

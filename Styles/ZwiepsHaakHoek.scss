@@ -84,7 +84,7 @@ body {
             @include justify-content(center);
             @include align-items(center);
             @include flex-direction(column);
-            gap: var(--size-lg);
+            gap: var(--size-x-lg);
 
             > .info-message-container {
                 display: flex;
@@ -92,7 +92,7 @@ body {
                 @include justify-content(center);
                 @include align-content(center);
                 @include align-items(center);
-                gap: var(--size-s);
+                gap: var(--size-x-lg);
 
                 > #loading-text {
                 }
@@ -100,6 +100,33 @@ body {
                 > #crochet-ball-svg {
                     width: var(--size-x-lg);
                     height: var(--size-x-lg);
+                }
+            }
+
+            > .progress-bar {
+                position: relative;
+                height: var(--size-lg);
+                width: 25%;
+                border: solid var(--size-xx-s) var(--color-primary);
+                @include border-radius(var(--size-xx-s));
+
+                > #progress {
+                    width: 0;
+                    height: inherit;
+                    background-color: var(--color-primary);
+                    box-shadow: 0 0 var(--size-lg) var(--color-primary);
+                }
+
+                > #progress-text {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    display: flex;
+                    @include justify-content(center);
+                    @include align-content(center);
+                    @include align-items(center);
                 }
             }
 
@@ -111,18 +138,55 @@ body {
     }
 }
 
-@media (max-width: map-get($dimensions, 'phone')) {
+@media (max-width: map-get($dimensions, 'tablet')) {
     body {
         > #app {
             > .initial-loading-screen {
                 .info-message-container {
-                    @include flex-direction(column);
-                    gap: var(--size-x-lg);
+                    gap: var(--size-lg);
 
                     > #loading-text {
                     }
 
                     > #crochet-ball-svg {
+                    }
+                }
+
+                > .progress-bar {
+                    width: 50%;
+
+                    > #progress {
+                    }
+
+                    > #progress-text {
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: map-get($dimensions, 'phone')) {
+    body {
+        > #app {
+            > .initial-loading-screen {
+                .info-message-container {
+                    gap: var(--size-md);
+
+                    > #loading-text {
+                    }
+
+                    > #crochet-ball-svg {
+                    }
+                }
+
+                > .progress-bar {
+                    width: 75%;
+
+                    > #progress {
+                    }
+
+                    > #progress-text {
                     }
                 }
             }
