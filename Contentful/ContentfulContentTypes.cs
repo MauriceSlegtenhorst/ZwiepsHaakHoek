@@ -16,7 +16,6 @@ namespace ZwiepsHaakHoek.Contentful
             _ when typeof(TContentType) == typeof(CFLanguageIcon) => LANGUAGE_ICON,
             _ when typeof(TContentType) == typeof(CFIndex) => INDEX,
             _ when typeof(TContentType) == typeof(CFProduct) => PRODUCT,
-            //_ when typeof(TContentType) == typeof(CFProducts) => PRODUCTS,
             _ => throw new KeyNotFoundException($"No ContentType found for key: \"{ nameof(TContentType) }\"."),
         };
     }

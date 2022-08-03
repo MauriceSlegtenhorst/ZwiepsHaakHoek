@@ -5,6 +5,7 @@
     <Nullable>annotations</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+    <AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

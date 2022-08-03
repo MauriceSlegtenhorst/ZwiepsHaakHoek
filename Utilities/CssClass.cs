@@ -5,6 +5,14 @@ namespace ZwiepsHaakHoek.Utilities
 {
     public class CssClass : IList<string>
     {
+        public CssClass(params string[] classes) : this(false, classes) { }
+
+        public CssClass(bool isReadOnly, params string[] classes)
+        {
+            IsReadOnly = isReadOnly;
+            Classes = classes;
+        }
+
         public string[] Classes { get; set; }
 
         public int Count => Classes.Length;
@@ -13,17 +21,6 @@ namespace ZwiepsHaakHoek.Utilities
 
         public string this[int index] { get => Classes[index]; set => Classes[index] = value; }
 
-        public CssClass(params string[] classes)
-        {
-            Classes = classes;
-        }
-
-        public CssClass(bool isReadOnly, params string[] classes)
-        {
-            IsReadOnly = isReadOnly;
-            Classes = classes;
-        }
-
         public int IndexOf(string item)
         {
             return Array.IndexOf(Classes, item);
@@ -31,7 +28,7 @@ namespace ZwiepsHaakHoek.Utilities
 
         public void Insert(int index, string item)
         {
-            if (IsReadOnly || index >= Classes.Length || index < 0)
+            if (IsReadOnly || index >= Classes.Length || index < 0 || string.IsNullOrEmpty(item))
                 return;
 
             int newLength = Classes.Length + 1;
@@ -40,7 +37,7 @@ namespace ZwiepsHaakHoek.Utilities
 
             for (int i = 0; i < newLength; i++)
             {
-                if(i == index)
+                if (i == index)
                 {
                     newClasses[i] = item;
                     isInserted = true;
@@ -81,7 +78,7 @@ namespace ZwiepsHaakHoek.Utilities
 
         public void Add(string item)
         {
-            if (IsReadOnly)
+            if (IsReadOnly || string.IsNullOrEmpty(item))
                 return;
 
             int newLength = Classes.Length + 1;
@@ -103,6 +100,9 @@ namespace ZwiepsHaakHoek.Utilities
 
         public bool Contains(string item)
         {
+            if (string.IsNullOrEmpty(item))
+                return false;
+
             return Classes.Contains(item);
         }
 
@@ -113,32 +113,27 @@ namespace ZwiepsHaakHoek.Utilities
 
         public bool Remove(string item)
         {
-            if (IsReadOnly || Classes.Length == 0)
+            if (IsReadOnly || Classes.Length == 0 || string.IsNullOrEmpty(item))
                 return false;
 
-            if(!Classes.Contains(item))
-                return false;
+            string[]? newClasses = Classes.Length > 1
+                ? new string[Classes.Length - 1]
+                : null;
 
-            var newClasses = new string[Classes.Length - 1];
+            var isRemoved = false;
 
-            if(newClasses.Length > 0)
+            for (int i = 0; i < Classes.Length; i++)
             {
-                bool isRemoved = false;
-                for (int i = 0; i < Classes.Length; i++)
-                {
-                    if (Classes[i] == item)
-                    {
-                        isRemoved = true;
-                    }
-                    else
-                    {
-                        newClasses[isRemoved ? i - 1 : i] = Classes[i];
-                    }
-                }
+                if (Classes[i] == item)
+                    isRemoved = true;
+                else if (newClasses is not null)
+                    newClasses[isRemoved ? i - 1 : i] = Classes[i];
             }
 
-            Classes = newClasses;
+            if (!isRemoved)
+                return false;
 
+            Classes = newClasses ?? Array.Empty<string>();
             return true;
         }
 
@@ -161,7 +156,7 @@ namespace ZwiepsHaakHoek.Utilities
             for (int i = 0; i < Classes.Length; i++)
             {
                 stringBuilder.Append(Classes[i]);
-                if(i != Classes.Length -1)
+                if (i != Classes.Length - 1)
                     stringBuilder.Append(' ');
             }
 
